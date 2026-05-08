@@ -221,6 +221,25 @@ See [`artifacts/limitations.md`](artifacts/limitations.md) for the full list.
 
 ---
 
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@misc{tas2026seismicai,
+  title        = {Seismic AI: Automatic Micro-Seismic Detection and TBDY-2018
+                  Decision Support via Deep Learning},
+  author       = {Ta{\c{s}}, Bertu{\u{g}} and Y{\"u}cel, Kadir Emir and
+                  Takyac{\i}, Melih and {\"O}zdemir, Emre and Nasibo{\u{g}}lu, Efendi},
+  year         = {2026},
+  howpublished = {III. National Basic Sciences Youth Symposium and Science Fair,
+                  Dokuz Eyl{\"u}l University, \.{I}zmir, Turkey, 12--13 May 2026},
+  url          = {https://github.com/BertugTas/seismic-ai-project}
+}
+```
+
+---
+
 ## License
 
 MIT License — see [LICENSE](LICENSE) for details.
