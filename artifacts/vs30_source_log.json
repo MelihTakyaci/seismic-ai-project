@@ -1,0 +1,45 @@
+{
+  "afad_tdth": {
+    "url": "https://tdth.afad.gov.tr/TDTH/",
+    "status": "error: HTTPError: HTTP Error 404: ",
+    "accessible": false,
+    "note": "AFAD TDTH is a JSF web application with no public REST API. The main.xhtml returns 302 (redirect to login). Programmatic access not supported as of 2026-04."
+  },
+  "usgs_vs30": {
+    "url": "https://earthquake.usgs.gov/hazards/apps/vs30/",
+    "status": "error: HTTPError: HTTP Error 404: Not Found",
+    "accessible": false,
+    "note": "USGS Vs30 point-query service discontinued."
+  },
+  "fallback": {
+    "method": "TBDY-2018 anchor values + IDW interpolation",
+    "n_anchors": 42,
+    "resolution_deg": 0.25,
+    "reference": "AFAD, 2018. T\u00fcrkiye Bina Deprem Y\u00f6netmeli\u011fi (TBDY-2018). Tablo 2.1 ve Sismik Tehlike Haritalar\u0131."
+  },
+  "grid_summary": {
+    "n_cells": 1825,
+    "lat_range": [
+      36.0,
+      42.0
+    ],
+    "lon_range": [
+      26.0,
+      44.0
+    ],
+    "resolution": 0.25,
+    "soil_classes": {
+      "ZD": 1589,
+      "ZC": 232,
+      "ZB": 4
+    },
+    "Ss_min": 0.415,
+    "Ss_max": 2.723,
+    "n_anchors": 42,
+    "source": "TBDY-2018 spectral acceleration anchor values (published) + IDW",
+    "primary_source_failed": {
+      "afad_tdth": "JSF web UI, no public REST API",
+      "usgs_vs30": "Service deprecated/discontinued (HTTP 404)"
+    }
+  }
+}

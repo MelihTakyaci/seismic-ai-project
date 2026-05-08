@@ -1,0 +1,3738 @@
+{
+  "model": "STA/LTA",
+  "parameters": {
+    "sta_s": 0.5,
+    "lta_s": 10.0,
+    "threshold": 3.0,
+    "component": "HHZ",
+    "detect_tolerance_s": 5.0
+  },
+  "results": [
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000041.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000041",
+      "magnitude": 4.7,
+      "detected": true,
+      "first_trigger_s": 28.87,
+      "offset_from_origin_s": -1.13,
+      "peak_stalta": 10.683,
+      "n_triggers": 6,
+      "trigger_times_s": [
+        10.05,
+        17.09,
+        20.05,
+        28.87,
+        36.32,
+        50.4
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230206_0000041.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000041",
+      "magnitude": 4.7,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.419,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000041.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000041",
+      "magnitude": 4.7,
+      "detected": true,
+      "first_trigger_s": 34.09,
+      "offset_from_origin_s": 4.09,
+      "peak_stalta": 14.689,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        20.42,
+        23.33,
+        34.09,
+        37.94,
+        41.41
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230206_0000041.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000041",
+      "magnitude": 4.7,
+      "detected": true,
+      "first_trigger_s": 11.17,
+      "offset_from_origin_s": null,
+      "peak_stalta": 13.142,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        11.17,
+        17.61
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000023.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000023",
+      "magnitude": 4.8,
+      "detected": false,
+      "first_trigger_s": 11.02,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.508,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        11.02,
+        13.82
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000023.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000023",
+      "magnitude": 4.8,
+      "detected": true,
+      "first_trigger_s": 31.92,
+      "offset_from_origin_s": 1.92,
+      "peak_stalta": 8.065,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        31.92,
+        44.87,
+        54.43
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000083.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000083",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 45.85,
+      "offset_from_origin_s": 15.85,
+      "peak_stalta": 13.209,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        45.85,
+        50.11,
+        57.85,
+        59.21
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230206_0000083.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000083",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 10.0,
+      "offset_from_origin_s": null,
+      "peak_stalta": 10.494,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        10.0,
+        21.64,
+        35.13,
+        51.92
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000083.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000083",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 34.55,
+      "offset_from_origin_s": 4.55,
+      "peak_stalta": 15.389,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        11.53,
+        34.55
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230206_0000083.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000083",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 18.82,
+      "offset_from_origin_s": null,
+      "peak_stalta": 15.344,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        18.82
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000129.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000129",
+      "magnitude": 3.3,
+      "detected": true,
+      "first_trigger_s": 25.63,
+      "offset_from_origin_s": -4.37,
+      "peak_stalta": 6.68,
+      "n_triggers": 6,
+      "trigger_times_s": [
+        23.84,
+        25.63,
+        35.86,
+        36.85,
+        38.64,
+        43.3
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000118.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000118",
+      "magnitude": 5.0,
+      "detected": true,
+      "first_trigger_s": 40.52,
+      "offset_from_origin_s": 10.52,
+      "peak_stalta": 17.854,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        40.52,
+        45.57
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000163.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000163",
+      "magnitude": 4.5,
+      "detected": true,
+      "first_trigger_s": 32.91,
+      "offset_from_origin_s": 2.91,
+      "peak_stalta": 17.855,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        32.91,
+        37.97
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000149.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000149",
+      "magnitude": 3.1,
+      "detected": true,
+      "first_trigger_s": 47.93,
+      "offset_from_origin_s": 17.93,
+      "peak_stalta": 8.328,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.38,
+        18.16,
+        47.93
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000188.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000188",
+      "magnitude": 3.7,
+      "detected": false,
+      "first_trigger_s": 20.02,
+      "offset_from_origin_s": null,
+      "peak_stalta": 11.613,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        20.02
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000188.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000188",
+      "magnitude": 3.7,
+      "detected": true,
+      "first_trigger_s": 25.5,
+      "offset_from_origin_s": -4.5,
+      "peak_stalta": 12.01,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        25.5,
+        34.74,
+        55.35
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000291.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000291",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 31.02,
+      "offset_from_origin_s": 1.02,
+      "peak_stalta": 4.972,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        10.21,
+        31.02,
+        33.77,
+        43.8
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000291.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000291",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 27.05,
+      "offset_from_origin_s": -2.95,
+      "peak_stalta": 8.362,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        27.05,
+        33.97,
+        39.46
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000230.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000230",
+      "magnitude": 3.9,
+      "detected": true,
+      "first_trigger_s": 30.61,
+      "offset_from_origin_s": 0.61,
+      "peak_stalta": 7.207,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        23.9,
+        30.61
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230206_0000230.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000230",
+      "magnitude": 3.9,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 1.871,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000230.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000230",
+      "magnitude": 3.9,
+      "detected": true,
+      "first_trigger_s": 45.42,
+      "offset_from_origin_s": 15.42,
+      "peak_stalta": 8.824,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        12.11,
+        13.7,
+        22.39,
+        45.42,
+        56.67
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230206_0000230.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000230",
+      "magnitude": 3.9,
+      "detected": true,
+      "first_trigger_s": 33.73,
+      "offset_from_origin_s": null,
+      "peak_stalta": 6.502,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        33.73,
+        36.1,
+        39.02,
+        42.91
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000264.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000264",
+      "magnitude": 4.3,
+      "detected": true,
+      "first_trigger_s": 46.43,
+      "offset_from_origin_s": 16.43,
+      "peak_stalta": 14.977,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        10.5,
+        46.43,
+        53.41,
+        54.8,
+        58.09
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000264.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000264",
+      "magnitude": 4.3,
+      "detected": true,
+      "first_trigger_s": 30.12,
+      "offset_from_origin_s": 0.12,
+      "peak_stalta": 15.822,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        11.83,
+        22.21,
+        30.12,
+        42.54,
+        50.44
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000261.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000261",
+      "magnitude": 6.0,
+      "detected": true,
+      "first_trigger_s": 44.64,
+      "offset_from_origin_s": 14.64,
+      "peak_stalta": 12.064,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        18.69,
+        44.64,
+        54.84
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000261.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000261",
+      "magnitude": 6.0,
+      "detected": true,
+      "first_trigger_s": 27.46,
+      "offset_from_origin_s": -2.54,
+      "peak_stalta": 16.098,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        27.46,
+        35.15,
+        42.34,
+        51.36
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000343.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000343",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 48.54,
+      "offset_from_origin_s": 18.54,
+      "peak_stalta": 8.327,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        48.54,
+        58.68
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000343.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000343",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 41.8,
+      "offset_from_origin_s": 11.8,
+      "peak_stalta": 18.533,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        41.8,
+        50.54
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000287.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000287",
+      "magnitude": 5.0,
+      "detected": true,
+      "first_trigger_s": 40.54,
+      "offset_from_origin_s": 10.54,
+      "peak_stalta": 4.564,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        22.65,
+        40.54,
+        44.3
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000287.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000287",
+      "magnitude": 5.0,
+      "detected": true,
+      "first_trigger_s": 27.03,
+      "offset_from_origin_s": -2.97,
+      "peak_stalta": 11.346,
+      "n_triggers": 6,
+      "trigger_times_s": [
+        11.43,
+        21.12,
+        27.03,
+        44.67,
+        46.61,
+        53.41
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000345.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000345",
+      "magnitude": 3.8,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.519,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000345.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000345",
+      "magnitude": 3.8,
+      "detected": true,
+      "first_trigger_s": 30.62,
+      "offset_from_origin_s": 0.62,
+      "peak_stalta": 8.766,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        30.62,
+        41.31,
+        53.68,
+        58.72
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000429.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000429",
+      "magnitude": 4.4,
+      "detected": true,
+      "first_trigger_s": 25.26,
+      "offset_from_origin_s": -4.74,
+      "peak_stalta": 9.532,
+      "n_triggers": 6,
+      "trigger_times_s": [
+        25.26,
+        31.5,
+        34.07,
+        36.43,
+        55.47,
+        57.09
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000429.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000429",
+      "magnitude": 4.4,
+      "detected": true,
+      "first_trigger_s": 31.94,
+      "offset_from_origin_s": 1.94,
+      "peak_stalta": 15.971,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        13.51,
+        18.0,
+        22.84,
+        31.94,
+        50.13
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000370.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000370",
+      "magnitude": 3.6,
+      "detected": true,
+      "first_trigger_s": 45.22,
+      "offset_from_origin_s": 15.22,
+      "peak_stalta": 9.642,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        45.22,
+        57.34,
+        58.57
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000370.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000370",
+      "magnitude": 3.6,
+      "detected": true,
+      "first_trigger_s": 32.9,
+      "offset_from_origin_s": 2.9,
+      "peak_stalta": 11.076,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        18.91,
+        32.9,
+        40.79,
+        48.03
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000390.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000390",
+      "magnitude": 4.0,
+      "detected": true,
+      "first_trigger_s": 47.98,
+      "offset_from_origin_s": 17.98,
+      "peak_stalta": 7.424,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        12.42,
+        22.13,
+        24.23,
+        47.98,
+        56.84
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000390.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000390",
+      "magnitude": 4.0,
+      "detected": true,
+      "first_trigger_s": 34.17,
+      "offset_from_origin_s": 4.17,
+      "peak_stalta": 16.137,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        14.74,
+        34.17,
+        40.97,
+        43.01,
+        51.23
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000413.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000413",
+      "magnitude": 4.5,
+      "detected": true,
+      "first_trigger_s": 33.86,
+      "offset_from_origin_s": 3.86,
+      "peak_stalta": 5.07,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        33.86,
+        48.48
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000413.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000413",
+      "magnitude": 4.5,
+      "detected": true,
+      "first_trigger_s": 48.59,
+      "offset_from_origin_s": 18.59,
+      "peak_stalta": 12.792,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        17.34,
+        48.59
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000419.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000419",
+      "magnitude": 4.4,
+      "detected": true,
+      "first_trigger_s": 47.93,
+      "offset_from_origin_s": 17.93,
+      "peak_stalta": 14.743,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        47.93
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000419.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000419",
+      "magnitude": 4.4,
+      "detected": true,
+      "first_trigger_s": 30.87,
+      "offset_from_origin_s": 0.87,
+      "peak_stalta": 18.224,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        30.87,
+        37.24,
+        43.89,
+        46.84,
+        58.37
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000584.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000584",
+      "magnitude": 3.5,
+      "detected": false,
+      "first_trigger_s": 10.27,
+      "offset_from_origin_s": null,
+      "peak_stalta": 5.598,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.27,
+        13.6,
+        17.66
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000584.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000584",
+      "magnitude": 3.5,
+      "detected": true,
+      "first_trigger_s": 38.22,
+      "offset_from_origin_s": 8.22,
+      "peak_stalta": 10.775,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        38.22,
+        44.64
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000500.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000500",
+      "magnitude": 4.9,
+      "detected": true,
+      "first_trigger_s": 43.44,
+      "offset_from_origin_s": 13.44,
+      "peak_stalta": 14.615,
+      "n_triggers": 7,
+      "trigger_times_s": [
+        13.46,
+        19.66,
+        24.62,
+        43.44,
+        48.52,
+        50.95,
+        55.25
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230206_0000500.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000500",
+      "magnitude": 4.9,
+      "detected": true,
+      "first_trigger_s": 15.9,
+      "offset_from_origin_s": null,
+      "peak_stalta": 8.535,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        15.9,
+        28.55,
+        43.78
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000500.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000500",
+      "magnitude": 4.9,
+      "detected": true,
+      "first_trigger_s": 39.81,
+      "offset_from_origin_s": 9.81,
+      "peak_stalta": 17.0,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        39.81,
+        49.2
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230206_0000500.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000500",
+      "magnitude": 4.9,
+      "detected": true,
+      "first_trigger_s": 13.61,
+      "offset_from_origin_s": null,
+      "peak_stalta": 13.946,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        13.61,
+        22.92,
+        28.21,
+        30.91
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000512.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000512",
+      "magnitude": 3.8,
+      "detected": true,
+      "first_trigger_s": 44.3,
+      "offset_from_origin_s": 14.3,
+      "peak_stalta": 11.787,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        10.63,
+        44.3,
+        48.87,
+        55.79
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000512.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000512",
+      "magnitude": 3.8,
+      "detected": true,
+      "first_trigger_s": 26.95,
+      "offset_from_origin_s": -3.05,
+      "peak_stalta": 16.905,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        12.7,
+        26.95,
+        45.25,
+        51.98
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000522.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000522",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 28.74,
+      "offset_from_origin_s": -1.26,
+      "peak_stalta": 14.66,
+      "n_triggers": 6,
+      "trigger_times_s": [
+        13.8,
+        20.73,
+        28.74,
+        33.4,
+        52.72,
+        57.38
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000522.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000522",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 41.15,
+      "offset_from_origin_s": 11.15,
+      "peak_stalta": 8.47,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        41.15,
+        42.86,
+        55.96
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230206_0000528.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000528",
+      "magnitude": 3.3,
+      "detected": true,
+      "first_trigger_s": 29.64,
+      "offset_from_origin_s": -0.36,
+      "peak_stalta": 9.347,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        15.96,
+        22.01,
+        29.64,
+        31.05
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230206_0000528.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230206_0000528",
+      "magnitude": 3.3,
+      "detected": true,
+      "first_trigger_s": 52.68,
+      "offset_from_origin_s": 22.68,
+      "peak_stalta": 10.16,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        10.15,
+        52.68
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230207_0000101.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000101",
+      "magnitude": 2.6,
+      "detected": false,
+      "first_trigger_s": 13.85,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.558,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        13.85,
+        55.59
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230207_0000101.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000101",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 26.92,
+      "offset_from_origin_s": -3.08,
+      "peak_stalta": 6.804,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        26.92,
+        39.94
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230207_0000283.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000283",
+      "magnitude": 3.3,
+      "detected": true,
+      "first_trigger_s": 52.22,
+      "offset_from_origin_s": 22.22,
+      "peak_stalta": 12.266,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        52.22
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230207_0000283.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000283",
+      "magnitude": 3.3,
+      "detected": true,
+      "first_trigger_s": 31.99,
+      "offset_from_origin_s": 1.99,
+      "peak_stalta": 17.61,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        31.99,
+        33.38,
+        41.1,
+        49.73
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230207_0000283.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000283",
+      "magnitude": 3.3,
+      "detected": true,
+      "first_trigger_s": 10.94,
+      "offset_from_origin_s": null,
+      "peak_stalta": 15.96,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.94,
+        23.19,
+        32.8
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230207_0000288.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000288",
+      "magnitude": 4.9,
+      "detected": true,
+      "first_trigger_s": 47.04,
+      "offset_from_origin_s": 17.04,
+      "peak_stalta": 15.867,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        47.04
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230207_0000288.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000288",
+      "magnitude": 4.9,
+      "detected": true,
+      "first_trigger_s": 26.08,
+      "offset_from_origin_s": -3.92,
+      "peak_stalta": 18.025,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        14.3,
+        26.08,
+        33.24
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230207_0000386.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000386",
+      "magnitude": 3.0,
+      "detected": false,
+      "first_trigger_s": 18.78,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.347,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        18.78
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230207_0000386.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000386",
+      "magnitude": 3.0,
+      "detected": true,
+      "first_trigger_s": 32.85,
+      "offset_from_origin_s": null,
+      "peak_stalta": 7.396,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        32.85,
+        37.38
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230207_0000386.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000386",
+      "magnitude": 3.0,
+      "detected": true,
+      "first_trigger_s": 45.61,
+      "offset_from_origin_s": 15.61,
+      "peak_stalta": 11.251,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        45.61,
+        55.25
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230207_0000386.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000386",
+      "magnitude": 3.0,
+      "detected": true,
+      "first_trigger_s": 24.31,
+      "offset_from_origin_s": null,
+      "peak_stalta": 15.455,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        24.31,
+        33.61
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230207_0000428.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000428",
+      "magnitude": 2.7,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.095,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230207_0000428.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000428",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 11.68,
+      "offset_from_origin_s": null,
+      "peak_stalta": 6.112,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        11.68,
+        14.07,
+        15.58,
+        50.74
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230207_0000428.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000428",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 36.31,
+      "offset_from_origin_s": 6.31,
+      "peak_stalta": 12.617,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        36.31
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230207_0000428.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000428",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 34.72,
+      "offset_from_origin_s": null,
+      "peak_stalta": 11.801,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        34.72,
+        46.01
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230207_0000445.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000445",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 36.98,
+      "offset_from_origin_s": 6.98,
+      "peak_stalta": 4.115,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        36.98
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230207_0000445.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000445",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 40.29,
+      "offset_from_origin_s": null,
+      "peak_stalta": 9.328,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        40.29
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230207_0000445.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000445",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 38.58,
+      "offset_from_origin_s": 8.58,
+      "peak_stalta": 13.75,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        24.11,
+        38.58,
+        43.47
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230207_0000445.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000445",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 29.93,
+      "offset_from_origin_s": null,
+      "peak_stalta": 9.443,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        29.93,
+        35.44,
+        38.82,
+        46.08,
+        50.31
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230207_0000422.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000422",
+      "magnitude": 3.9,
+      "detected": true,
+      "first_trigger_s": 44.09,
+      "offset_from_origin_s": 14.09,
+      "peak_stalta": 14.955,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        44.09,
+        51.42,
+        57.22
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230207_0000422.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000422",
+      "magnitude": 3.9,
+      "detected": true,
+      "first_trigger_s": 27.45,
+      "offset_from_origin_s": -2.55,
+      "peak_stalta": 18.282,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        21.29,
+        27.45,
+        33.88,
+        40.95,
+        50.33
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230207_0000423.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000423",
+      "magnitude": 3.1,
+      "detected": true,
+      "first_trigger_s": 26.99,
+      "offset_from_origin_s": -3.01,
+      "peak_stalta": 11.252,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        10.0,
+        15.91,
+        20.52,
+        26.99
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230207_0000423.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000423",
+      "magnitude": 3.1,
+      "detected": true,
+      "first_trigger_s": 35.48,
+      "offset_from_origin_s": 5.48,
+      "peak_stalta": 12.152,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        13.92,
+        35.48,
+        49.31
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230207_0000425.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000425",
+      "magnitude": 3.2,
+      "detected": false,
+      "first_trigger_s": 10.0,
+      "offset_from_origin_s": null,
+      "peak_stalta": 7.676,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.0,
+        12.56,
+        15.74
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230207_0000425.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230207_0000425",
+      "magnitude": 3.2,
+      "detected": false,
+      "first_trigger_s": 11.11,
+      "offset_from_origin_s": null,
+      "peak_stalta": 5.465,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        11.11
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230208_0000003.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000003",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 29.64,
+      "offset_from_origin_s": -0.36,
+      "peak_stalta": 7.903,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        29.64,
+        44.77,
+        54.41
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230208_0000010.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000010",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 47.98,
+      "offset_from_origin_s": 17.98,
+      "peak_stalta": 4.805,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        17.63,
+        47.98
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230208_0000010.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000010",
+      "magnitude": 3.2,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.079,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230208_0000010.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000010",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 46.96,
+      "offset_from_origin_s": 16.96,
+      "peak_stalta": 6.983,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        11.99,
+        46.96,
+        58.0
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230208_0000010.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000010",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 16.77,
+      "offset_from_origin_s": null,
+      "peak_stalta": 5.986,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        16.77,
+        43.72
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230208_0000144.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000144",
+      "magnitude": 2.9,
+      "detected": true,
+      "first_trigger_s": 30.56,
+      "offset_from_origin_s": 0.56,
+      "peak_stalta": 11.388,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        30.56,
+        37.99,
+        49.36
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230208_0000144.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000144",
+      "magnitude": 2.9,
+      "detected": true,
+      "first_trigger_s": 31.2,
+      "offset_from_origin_s": 1.2,
+      "peak_stalta": 18.648,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        12.04,
+        21.59,
+        31.2,
+        32.81
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230208_0000150.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000150",
+      "magnitude": 3.1,
+      "detected": true,
+      "first_trigger_s": 36.43,
+      "offset_from_origin_s": 6.43,
+      "peak_stalta": 19.436,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        17.46,
+        18.42,
+        36.43,
+        41.77,
+        59.58
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230208_0000187.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000187",
+      "magnitude": 3.4,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.819,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230208_0000262.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000262",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 47.24,
+      "offset_from_origin_s": 17.24,
+      "peak_stalta": 15.535,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.21,
+        47.24,
+        53.26
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230208_0000262.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000262",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 41.65,
+      "offset_from_origin_s": 11.65,
+      "peak_stalta": 9.355,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        20.82,
+        41.65
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230208_0000294.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000294",
+      "magnitude": 3.5,
+      "detected": true,
+      "first_trigger_s": 14.45,
+      "offset_from_origin_s": null,
+      "peak_stalta": 6.401,
+      "n_triggers": 6,
+      "trigger_times_s": [
+        14.45,
+        15.78,
+        18.43,
+        41.74,
+        56.02,
+        58.6
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230208_0000294.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000294",
+      "magnitude": 3.5,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 1.897,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230208_0000343.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000343",
+      "magnitude": 2.8,
+      "detected": false,
+      "first_trigger_s": 59.85,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.308,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        59.85
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230208_0000343.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000343",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 10.53,
+      "offset_from_origin_s": null,
+      "peak_stalta": 7.868,
+      "n_triggers": 6,
+      "trigger_times_s": [
+        10.53,
+        15.08,
+        17.07,
+        34.46,
+        52.18,
+        58.15
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230208_0000403.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000403",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 45.5,
+      "offset_from_origin_s": 15.5,
+      "peak_stalta": 11.019,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        45.5,
+        57.97
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230208_0000403.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000403",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 16.7,
+      "offset_from_origin_s": null,
+      "peak_stalta": 8.602,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        16.7,
+        22.17
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230208_0000403.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000403",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 37.84,
+      "offset_from_origin_s": 7.84,
+      "peak_stalta": 15.696,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        37.84,
+        44.02
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230208_0000403.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230208_0000403",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 10.88,
+      "offset_from_origin_s": null,
+      "peak_stalta": 19.38,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        10.88
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230209_0000039.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000039",
+      "magnitude": 3.4,
+      "detected": true,
+      "first_trigger_s": 44.36,
+      "offset_from_origin_s": 14.36,
+      "peak_stalta": 15.763,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        10.1,
+        44.36,
+        52.03,
+        57.66
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230209_0000039.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000039",
+      "magnitude": 3.4,
+      "detected": true,
+      "first_trigger_s": 10.1,
+      "offset_from_origin_s": null,
+      "peak_stalta": 16.16,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.1,
+        37.4,
+        50.91
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230209_0000039.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000039",
+      "magnitude": 3.4,
+      "detected": true,
+      "first_trigger_s": 40.52,
+      "offset_from_origin_s": 10.52,
+      "peak_stalta": 18.591,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        10.0,
+        12.77,
+        40.52,
+        48.01
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230209_0000039.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000039",
+      "magnitude": 3.4,
+      "detected": true,
+      "first_trigger_s": 11.81,
+      "offset_from_origin_s": null,
+      "peak_stalta": 18.185,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        11.81,
+        33.73,
+        37.75,
+        41.45
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230209_0000042.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000042",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 41.96,
+      "offset_from_origin_s": 11.96,
+      "peak_stalta": 9.518,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        41.96,
+        45.13
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230209_0000042.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000042",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 38.57,
+      "offset_from_origin_s": 8.57,
+      "peak_stalta": 12.054,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.02,
+        38.57,
+        44.32
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230209_0000068.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000068",
+      "magnitude": 3.5,
+      "detected": true,
+      "first_trigger_s": 42.09,
+      "offset_from_origin_s": 12.09,
+      "peak_stalta": 18.465,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        42.09,
+        57.11
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230209_0000162.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000162",
+      "magnitude": 2.9,
+      "detected": true,
+      "first_trigger_s": 50.41,
+      "offset_from_origin_s": 20.41,
+      "peak_stalta": 12.228,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        19.84,
+        50.41
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230209_0000162.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000162",
+      "magnitude": 2.9,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.596,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230209_0000276.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000276",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 30.12,
+      "offset_from_origin_s": 0.12,
+      "peak_stalta": 11.868,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        16.52,
+        30.12,
+        57.69
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230209_0000276.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000276",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 32.67,
+      "offset_from_origin_s": null,
+      "peak_stalta": 4.866,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        32.67,
+        49.14
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230209_0000276.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000276",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 45.3,
+      "offset_from_origin_s": 15.3,
+      "peak_stalta": 10.491,
+      "n_triggers": 6,
+      "trigger_times_s": [
+        11.53,
+        18.36,
+        45.3,
+        49.15,
+        55.66,
+        58.39
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230209_0000311.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000311",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 41.25,
+      "offset_from_origin_s": 11.25,
+      "peak_stalta": 7.917,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        41.25,
+        44.88,
+        56.5
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230209_0000438.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000438",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 43.37,
+      "offset_from_origin_s": 13.37,
+      "peak_stalta": 8.747,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        43.37,
+        53.25
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230209_0000438.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000438",
+      "magnitude": 2.5,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.832,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230209_0000477.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000477",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 42.47,
+      "offset_from_origin_s": 12.47,
+      "peak_stalta": 16.658,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        42.47,
+        58.14
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230209_0000477.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000477",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 36.26,
+      "offset_from_origin_s": 6.26,
+      "peak_stalta": 17.24,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        14.85,
+        20.58,
+        36.26,
+        46.82
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230209_0000499.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230209_0000499",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 29.53,
+      "offset_from_origin_s": -0.47,
+      "peak_stalta": 6.608,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        13.16,
+        29.53
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230210_0000024.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000024",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 25.28,
+      "offset_from_origin_s": -4.72,
+      "peak_stalta": 10.026,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        25.28,
+        31.39,
+        46.19,
+        56.12
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230210_0000024.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000024",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 19.65,
+      "offset_from_origin_s": null,
+      "peak_stalta": 8.092,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        19.65,
+        23.64,
+        34.02,
+        36.13
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230210_0000024.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000024",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 10.0,
+      "offset_from_origin_s": null,
+      "peak_stalta": 5.663,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        10.0,
+        16.68
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230210_0000113.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000113",
+      "magnitude": 2.5,
+      "detected": false,
+      "first_trigger_s": 16.88,
+      "offset_from_origin_s": null,
+      "peak_stalta": 6.89,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        16.88,
+        19.73,
+        56.24
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230210_0000113.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000113",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 34.84,
+      "offset_from_origin_s": 4.84,
+      "peak_stalta": 12.7,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        34.84,
+        42.52,
+        51.38
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230210_0000419.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000419",
+      "magnitude": 4.2,
+      "detected": false,
+      "first_trigger_s": 21.75,
+      "offset_from_origin_s": null,
+      "peak_stalta": 4.908,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        21.75
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230210_0000160.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000160",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 29.39,
+      "offset_from_origin_s": -0.61,
+      "peak_stalta": 5.453,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        29.39,
+        42.07,
+        55.22
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230210_0000160.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000160",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 57.99,
+      "offset_from_origin_s": null,
+      "peak_stalta": 4.196,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        57.99
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230210_0000160.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000160",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 36.61,
+      "offset_from_origin_s": 6.61,
+      "peak_stalta": 8.836,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        16.91,
+        36.61
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230210_0000160.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000160",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 20.33,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.548,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        20.33
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230210_0000198.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000198",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 31.48,
+      "offset_from_origin_s": 1.48,
+      "peak_stalta": 12.589,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        17.6,
+        31.48,
+        36.51,
+        51.9
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230210_0000198.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000198",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 11.01,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.507,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        11.01,
+        15.38,
+        51.64
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230210_0000198.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000198",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 39.98,
+      "offset_from_origin_s": null,
+      "peak_stalta": 6.549,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        39.98
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230210_0000257.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000257",
+      "magnitude": 3.5,
+      "detected": true,
+      "first_trigger_s": 32.28,
+      "offset_from_origin_s": 2.28,
+      "peak_stalta": 13.709,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.85,
+        17.1,
+        32.28
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230210_0000257.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000257",
+      "magnitude": 3.5,
+      "detected": false,
+      "first_trigger_s": 22.84,
+      "offset_from_origin_s": null,
+      "peak_stalta": 12.457,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        22.84
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230210_0000352.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000352",
+      "magnitude": 2.5,
+      "detected": false,
+      "first_trigger_s": 10.11,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.569,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        10.11
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230210_0000352.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000352",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 49.71,
+      "offset_from_origin_s": 19.71,
+      "peak_stalta": 5.074,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        13.24,
+        20.93,
+        49.71
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230210_0000362.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230210_0000362",
+      "magnitude": 2.6,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.671,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230211_0000013.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000013",
+      "magnitude": 2.9,
+      "detected": true,
+      "first_trigger_s": 45.48,
+      "offset_from_origin_s": 15.48,
+      "peak_stalta": 10.079,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        17.29,
+        45.48,
+        47.03
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230211_0000009.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000009",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 47.52,
+      "offset_from_origin_s": 17.52,
+      "peak_stalta": 16.787,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        17.42,
+        21.29,
+        47.52,
+        57.21
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230211_0000009.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000009",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 40.34,
+      "offset_from_origin_s": 10.34,
+      "peak_stalta": 17.521,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        19.02,
+        40.34,
+        47.68
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230211_0000039.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000039",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 54.28,
+      "offset_from_origin_s": 24.28,
+      "peak_stalta": 14.655,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        14.92,
+        21.33,
+        54.28
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230211_0000066.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000066",
+      "magnitude": 2.5,
+      "detected": false,
+      "first_trigger_s": 10.0,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.331,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        10.0
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230211_0000161.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000161",
+      "magnitude": 3.0,
+      "detected": true,
+      "first_trigger_s": 44.35,
+      "offset_from_origin_s": 14.35,
+      "peak_stalta": 14.803,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        44.35,
+        50.12,
+        53.79,
+        57.85
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230211_0000171.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000171",
+      "magnitude": 3.1,
+      "detected": true,
+      "first_trigger_s": 40.84,
+      "offset_from_origin_s": 10.84,
+      "peak_stalta": 8.883,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        40.84,
+        45.7,
+        54.5,
+        56.84
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230211_0000213.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000213",
+      "magnitude": 2.5,
+      "detected": false,
+      "first_trigger_s": 10.0,
+      "offset_from_origin_s": null,
+      "peak_stalta": 10.767,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        10.0,
+        56.06
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230211_0000213.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000213",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 42.6,
+      "offset_from_origin_s": 12.6,
+      "peak_stalta": 11.82,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        13.28,
+        42.6
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230211_0000328.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000328",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 25.8,
+      "offset_from_origin_s": -4.2,
+      "peak_stalta": 8.086,
+      "n_triggers": 7,
+      "trigger_times_s": [
+        12.47,
+        24.29,
+        25.8,
+        28.25,
+        41.46,
+        45.89,
+        51.62
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230211_0000328.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000328",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 37.38,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.132,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        37.38
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230211_0000328.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000328",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 42.44,
+      "offset_from_origin_s": 12.44,
+      "peak_stalta": 17.594,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        12.76,
+        42.44
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230211_0000328.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000328",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 12.0,
+      "offset_from_origin_s": null,
+      "peak_stalta": 7.148,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        12.0,
+        40.44
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230211_0000332.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000332",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 31.49,
+      "offset_from_origin_s": 1.49,
+      "peak_stalta": 8.279,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        22.56,
+        31.49,
+        39.56,
+        54.26,
+        57.12
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230211_0000332.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000332",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 26.48,
+      "offset_from_origin_s": null,
+      "peak_stalta": 12.21,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        26.48,
+        33.02,
+        36.25
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230211_0000332.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000332",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 31.72,
+      "offset_from_origin_s": 1.72,
+      "peak_stalta": 13.618,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        22.09,
+        31.72,
+        44.37,
+        53.2
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230211_0000332.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230211_0000332",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 26.07,
+      "offset_from_origin_s": null,
+      "peak_stalta": 19.084,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        26.07,
+        34.4
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230212_0000022.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000022",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 49.76,
+      "offset_from_origin_s": 19.76,
+      "peak_stalta": 13.28,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        49.76,
+        54.66
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230212_0000022.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000022",
+      "magnitude": 2.6,
+      "detected": true,
+      "first_trigger_s": 34.34,
+      "offset_from_origin_s": 4.34,
+      "peak_stalta": 15.275,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        34.34
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230212_0000025.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000025",
+      "magnitude": 3.0,
+      "detected": true,
+      "first_trigger_s": 49.12,
+      "offset_from_origin_s": 19.12,
+      "peak_stalta": 13.161,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        49.12,
+        55.44
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230212_0000025.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000025",
+      "magnitude": 3.0,
+      "detected": true,
+      "first_trigger_s": 50.99,
+      "offset_from_origin_s": 20.99,
+      "peak_stalta": 15.529,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        50.99,
+        55.75
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230212_0000055.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000055",
+      "magnitude": 2.5,
+      "detected": false,
+      "first_trigger_s": 23.92,
+      "offset_from_origin_s": null,
+      "peak_stalta": 6.353,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        23.92,
+        56.62,
+        59.01
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230212_0000055.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000055",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 46.48,
+      "offset_from_origin_s": 16.48,
+      "peak_stalta": 10.42,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        46.48
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230212_0000185.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000185",
+      "magnitude": 3.5,
+      "detected": true,
+      "first_trigger_s": 43.86,
+      "offset_from_origin_s": 13.86,
+      "peak_stalta": 16.612,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        18.1,
+        43.86,
+        56.96
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230212_0000185.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000185",
+      "magnitude": 3.5,
+      "detected": true,
+      "first_trigger_s": 54.79,
+      "offset_from_origin_s": null,
+      "peak_stalta": 4.179,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        54.79,
+        59.79
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230212_0000185.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000185",
+      "magnitude": 3.5,
+      "detected": true,
+      "first_trigger_s": 28.0,
+      "offset_from_origin_s": -2.0,
+      "peak_stalta": 19.165,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        28.0,
+        41.63,
+        51.18
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230212_0000185.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000185",
+      "magnitude": 3.5,
+      "detected": true,
+      "first_trigger_s": 24.62,
+      "offset_from_origin_s": null,
+      "peak_stalta": 6.165,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        24.62,
+        38.59
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230212_0000253.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000253",
+      "magnitude": 4.0,
+      "detected": true,
+      "first_trigger_s": 51.49,
+      "offset_from_origin_s": 21.49,
+      "peak_stalta": 4.153,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        13.78,
+        51.49
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230212_0000253.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000253",
+      "magnitude": 4.0,
+      "detected": true,
+      "first_trigger_s": 33.61,
+      "offset_from_origin_s": 3.61,
+      "peak_stalta": 16.815,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.55,
+        33.61,
+        50.38
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230212_0000253.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000253",
+      "magnitude": 4.0,
+      "detected": true,
+      "first_trigger_s": 10.37,
+      "offset_from_origin_s": null,
+      "peak_stalta": 7.812,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        10.37,
+        13.18,
+        18.64,
+        57.89
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230212_0000285.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000285",
+      "magnitude": 2.8,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.818,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230212_0000285.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000285",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 47.17,
+      "offset_from_origin_s": null,
+      "peak_stalta": 8.305,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        47.17,
+        56.86
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230212_0000340.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000340",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 37.51,
+      "offset_from_origin_s": 7.51,
+      "peak_stalta": 13.943,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        37.51,
+        51.13
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230212_0000340.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000340",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 15.96,
+      "offset_from_origin_s": null,
+      "peak_stalta": 5.65,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        15.96
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230212_0000340.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000340",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 35.02,
+      "offset_from_origin_s": 5.02,
+      "peak_stalta": 14.51,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        35.02,
+        38.32,
+        44.78
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230212_0000340.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000340",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 42.2,
+      "offset_from_origin_s": null,
+      "peak_stalta": 15.135,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        42.2,
+        54.34
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230212_0000371.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000371",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 25.58,
+      "offset_from_origin_s": -4.42,
+      "peak_stalta": 6.014,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        25.58,
+        27.88,
+        30.13
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230212_0000371.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000371",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 12.46,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.698,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        12.46
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230212_0000371.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000371",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 50.24,
+      "offset_from_origin_s": 20.24,
+      "peak_stalta": 14.634,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        16.14,
+        50.24,
+        57.71
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230212_0000371.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230212_0000371",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 29.89,
+      "offset_from_origin_s": null,
+      "peak_stalta": 7.093,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        29.89
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230213_0000056.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230213_0000056",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 39.52,
+      "offset_from_origin_s": 9.52,
+      "peak_stalta": 16.745,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        10.28,
+        14.0,
+        15.65,
+        39.52
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230213_0000094.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230213_0000094",
+      "magnitude": 3.2,
+      "detected": false,
+      "first_trigger_s": 10.82,
+      "offset_from_origin_s": null,
+      "peak_stalta": 16.057,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        10.82,
+        56.41
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230213_0000094.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230213_0000094",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 54.32,
+      "offset_from_origin_s": null,
+      "peak_stalta": 13.55,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        54.32
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230213_0000094.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230213_0000094",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 44.51,
+      "offset_from_origin_s": 14.51,
+      "peak_stalta": 13.188,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        44.51,
+        57.26
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230213_0000094.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230213_0000094",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 18.35,
+      "offset_from_origin_s": null,
+      "peak_stalta": 10.06,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        18.35,
+        32.95,
+        42.35,
+        54.7,
+        57.83
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230213_0000214.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230213_0000214",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 49.1,
+      "offset_from_origin_s": 19.1,
+      "peak_stalta": 6.794,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        49.1
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230213_0000214.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230213_0000214",
+      "magnitude": 2.8,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.243,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230213_0000214.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230213_0000214",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 41.44,
+      "offset_from_origin_s": null,
+      "peak_stalta": 19.211,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        41.44,
+        48.29
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230213_0000324.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230213_0000324",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 26.71,
+      "offset_from_origin_s": -3.29,
+      "peak_stalta": 9.331,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        26.71,
+        49.0,
+        54.47
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230213_0000324.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230213_0000324",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 41.36,
+      "offset_from_origin_s": 11.36,
+      "peak_stalta": 7.446,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        15.19,
+        41.36,
+        49.37
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230215_0000073.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230215_0000073",
+      "magnitude": 3.5,
+      "detected": true,
+      "first_trigger_s": 50.48,
+      "offset_from_origin_s": 20.48,
+      "peak_stalta": 11.696,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        50.48
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230215_0000073.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230215_0000073",
+      "magnitude": 3.5,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.982,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230215_0000135.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230215_0000135",
+      "magnitude": 3.9,
+      "detected": true,
+      "first_trigger_s": 42.66,
+      "offset_from_origin_s": 12.66,
+      "peak_stalta": 16.752,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        42.66,
+        51.93,
+        56.47
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230215_0000135.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230215_0000135",
+      "magnitude": 3.9,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.499,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230215_0000155.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230215_0000155",
+      "magnitude": 3.1,
+      "detected": true,
+      "first_trigger_s": 43.61,
+      "offset_from_origin_s": 13.61,
+      "peak_stalta": 14.817,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        43.61,
+        55.76
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230216_0000037.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000037",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 50.72,
+      "offset_from_origin_s": 20.72,
+      "peak_stalta": 3.445,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.89,
+        50.72,
+        59.76
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230216_0000086.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000086",
+      "magnitude": 3.4,
+      "detected": true,
+      "first_trigger_s": 45.75,
+      "offset_from_origin_s": 15.75,
+      "peak_stalta": 4.835,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        10.0,
+        45.75,
+        53.07,
+        57.44
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230216_0000086.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000086",
+      "magnitude": 3.4,
+      "detected": true,
+      "first_trigger_s": 45.82,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.947,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        45.82
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230216_0000096.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000096",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 25.82,
+      "offset_from_origin_s": -4.18,
+      "peak_stalta": 6.583,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.0,
+        25.82,
+        35.94
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230216_0000096.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000096",
+      "magnitude": 2.7,
+      "detected": true,
+      "first_trigger_s": 15.46,
+      "offset_from_origin_s": null,
+      "peak_stalta": 5.565,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        15.46,
+        50.57,
+        53.58
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230216_0000126.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000126",
+      "magnitude": 3.2,
+      "detected": false,
+      "first_trigger_s": 56.98,
+      "offset_from_origin_s": null,
+      "peak_stalta": 11.777,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        56.98
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230216_0000277.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000277",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 48.6,
+      "offset_from_origin_s": 18.6,
+      "peak_stalta": 3.893,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        48.6
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230216_0000277.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000277",
+      "magnitude": 2.8,
+      "detected": false,
+      "first_trigger_s": 10.0,
+      "offset_from_origin_s": null,
+      "peak_stalta": 14.611,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.0,
+        13.72,
+        55.07
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230216_0000296.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000296",
+      "magnitude": 2.9,
+      "detected": false,
+      "first_trigger_s": 59.44,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.106,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        59.44
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230216_0000296.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000296",
+      "magnitude": 2.9,
+      "detected": true,
+      "first_trigger_s": 20.74,
+      "offset_from_origin_s": null,
+      "peak_stalta": 8.155,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        20.74,
+        24.97,
+        29.12,
+        33.99
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230216_0000296.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000296",
+      "magnitude": 2.9,
+      "detected": true,
+      "first_trigger_s": 45.95,
+      "offset_from_origin_s": 15.95,
+      "peak_stalta": 8.207,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        45.95,
+        56.99
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230216_0000296.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230216_0000296",
+      "magnitude": 2.9,
+      "detected": true,
+      "first_trigger_s": 11.2,
+      "offset_from_origin_s": null,
+      "peak_stalta": 16.12,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        11.2,
+        20.3,
+        27.95
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230217_0000076.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230217_0000076",
+      "magnitude": 4.1,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.634,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230217_0000076.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230217_0000076",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 39.97,
+      "offset_from_origin_s": 9.97,
+      "peak_stalta": 15.418,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        10.84,
+        39.97,
+        51.21
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230217_0000076.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230217_0000076",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 31.31,
+      "offset_from_origin_s": null,
+      "peak_stalta": 5.361,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        31.31,
+        40.34,
+        58.42
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230217_0000233.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230217_0000233",
+      "magnitude": 4.2,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 1.92,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230217_0000233.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230217_0000233",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 51.36,
+      "offset_from_origin_s": 21.36,
+      "peak_stalta": 16.707,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        51.36
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230218_0000021.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000021",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 42.23,
+      "offset_from_origin_s": 12.23,
+      "peak_stalta": 14.898,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        42.23
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230218_0000021.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000021",
+      "magnitude": 3.2,
+      "detected": true,
+      "first_trigger_s": 36.21,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.729,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        36.21
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230218_0000075.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000075",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 45.1,
+      "offset_from_origin_s": 15.1,
+      "peak_stalta": 15.075,
+      "n_triggers": 6,
+      "trigger_times_s": [
+        11.5,
+        20.89,
+        23.4,
+        45.1,
+        56.09,
+        59.05
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230218_0000075.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000075",
+      "magnitude": 4.2,
+      "detected": true,
+      "first_trigger_s": 39.03,
+      "offset_from_origin_s": 9.03,
+      "peak_stalta": 19.221,
+      "n_triggers": 3,
+      "trigger_times_s": [
+        39.03,
+        40.8,
+        50.34
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230218_0000075.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000075",
+      "magnitude": 4.2,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.732,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230218_0000199.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000199",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 35.09,
+      "offset_from_origin_s": 5.09,
+      "peak_stalta": 18.443,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        35.09
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230218_0000199.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000199",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 10.72,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.715,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        10.72,
+        21.18
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230218_0000199.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000199",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 51.92,
+      "offset_from_origin_s": null,
+      "peak_stalta": 9.632,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        51.92
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230218_0000285.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000285",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 41.16,
+      "offset_from_origin_s": 11.16,
+      "peak_stalta": 11.416,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        41.16
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230218_0000285.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000285",
+      "magnitude": 2.5,
+      "detected": false,
+      "first_trigger_s": null,
+      "offset_from_origin_s": null,
+      "peak_stalta": 2.827,
+      "n_triggers": 0,
+      "trigger_times_s": []
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230218_0000285.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000285",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 30.68,
+      "offset_from_origin_s": 0.68,
+      "peak_stalta": 18.454,
+      "n_triggers": 4,
+      "trigger_times_s": [
+        30.68,
+        36.14,
+        42.68,
+        53.34
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230218_0000285.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230218_0000285",
+      "magnitude": 2.5,
+      "detected": true,
+      "first_trigger_s": 12.7,
+      "offset_from_origin_s": null,
+      "peak_stalta": 6.465,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        12.7,
+        28.43
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230219_0000004.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230219_0000004",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 44.54,
+      "offset_from_origin_s": 14.54,
+      "peak_stalta": 14.493,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        44.54
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230219_0000004.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230219_0000004",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 10.0,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.142,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        10.0
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230219_0000004.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230219_0000004",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 29.49,
+      "offset_from_origin_s": -0.51,
+      "peak_stalta": 17.051,
+      "n_triggers": 6,
+      "trigger_times_s": [
+        15.58,
+        20.17,
+        21.81,
+        29.49,
+        39.26,
+        47.83
+      ]
+    },
+    {
+      "npz": "noise_KO.KMRS_eu.emsc_event_20230219_0000004.npz",
+      "window_type": "noise",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230219_0000004",
+      "magnitude": 2.8,
+      "detected": true,
+      "first_trigger_s": 54.75,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.757,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        54.75
+      ]
+    },
+    {
+      "npz": "event_KO.KOZT_eu.emsc_event_20230219_0000074.npz",
+      "window_type": "event",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230219_0000074",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 49.34,
+      "offset_from_origin_s": 19.34,
+      "peak_stalta": 17.235,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        49.34,
+        56.27
+      ]
+    },
+    {
+      "npz": "noise_KO.KOZT_eu.emsc_event_20230219_0000074.npz",
+      "window_type": "noise",
+      "station": "KO.KOZT",
+      "event_id": "quakeml:eu.emsc/event/20230219_0000074",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 16.42,
+      "offset_from_origin_s": null,
+      "peak_stalta": 3.762,
+      "n_triggers": 1,
+      "trigger_times_s": [
+        16.42
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230219_0000074.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230219_0000074",
+      "magnitude": 4.1,
+      "detected": true,
+      "first_trigger_s": 33.37,
+      "offset_from_origin_s": 3.37,
+      "peak_stalta": 18.853,
+      "n_triggers": 2,
+      "trigger_times_s": [
+        12.48,
+        33.37
+      ]
+    },
+    {
+      "npz": "event_KO.KMRS_eu.emsc_event_20230219_0000141.npz",
+      "window_type": "event",
+      "station": "KO.KMRS",
+      "event_id": "quakeml:eu.emsc/event/20230219_0000141",
+      "magnitude": 3.6,
+      "detected": true,
+      "first_trigger_s": 27.52,
+      "offset_from_origin_s": -2.48,
+      "peak_stalta": 15.547,
+      "n_triggers": 5,
+      "trigger_times_s": [
+        16.92,
+        27.52,
+        33.0,
+        38.88,
+        47.83
+      ]
+    }
+  ]
+}

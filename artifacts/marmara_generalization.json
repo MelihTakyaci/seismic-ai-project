@@ -1,0 +1,148 @@
+{
+  "phase": "generalization_analysis",
+  "note": "No Western Marmara data available. Cross-station analysis within Kahramanmaras dataset used as proxy.",
+  "low_threshold": 100,
+  "high_threshold": 400,
+  "per_station": [
+    {
+      "station": "KO.YESY",
+      "n_test": 2,
+      "n_train": 7,
+      "tier": "low",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.5
+    },
+    {
+      "station": "KO.KARA",
+      "n_test": 6,
+      "n_train": 16,
+      "tier": "low",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.6666666666666666
+    },
+    {
+      "station": "KO.GULA",
+      "n_test": 10,
+      "n_train": 36,
+      "tier": "low",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.5
+    },
+    {
+      "station": "KO.DYBB",
+      "n_test": 15,
+      "n_train": 61,
+      "tier": "low",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.8
+    },
+    {
+      "station": "KO.MERS",
+      "n_test": 32,
+      "n_train": 147,
+      "tier": "mid",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.5
+    },
+    {
+      "station": "KO.SVRC",
+      "n_test": 58,
+      "n_train": 269,
+      "tier": "mid",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.9137931034482759
+    },
+    {
+      "station": "KO.TAHT",
+      "n_test": 61,
+      "n_train": 318,
+      "tier": "mid",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.8524590163934426
+    },
+    {
+      "station": "KO.KMRS",
+      "n_test": 77,
+      "n_train": 333,
+      "tier": "mid",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.935064935064935
+    },
+    {
+      "station": "KO.URFA",
+      "n_test": 75,
+      "n_train": 367,
+      "tier": "mid",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.92
+    },
+    {
+      "station": "KO.BNN",
+      "n_test": 101,
+      "n_train": 370,
+      "tier": "mid",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.9504950495049505
+    },
+    {
+      "station": "KO.KOZT",
+      "n_test": 80,
+      "n_train": 383,
+      "tier": "mid",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.925
+    },
+    {
+      "station": "KO.GAZ",
+      "n_test": 89,
+      "n_train": 412,
+      "tier": "high",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.898876404494382
+    },
+    {
+      "station": "KO.CEYT",
+      "n_test": 83,
+      "n_train": 468,
+      "tier": "high",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.7108433734939759
+    },
+    {
+      "station": "KO.SARI",
+      "n_test": 137,
+      "n_train": 596,
+      "tier": "high",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.9927007299270073
+    },
+    {
+      "station": "KO.DARE",
+      "n_test": 118,
+      "n_train": 603,
+      "tier": "high",
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.9576271186440678
+    }
+  ],
+  "tier_summary": {
+    "low": {
+      "n_windows": 33,
+      "n_stations": 4,
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.6667
+    },
+    "mid": {
+      "n_windows": 484,
+      "n_stations": 7,
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.8926
+    },
+    "high": {
+      "n_windows": 427,
+      "n_stations": 4,
+      "gpd_ft_recall": 1.0,
+      "gpd_zs_recall": 0.9087
+    }
+  }
+}

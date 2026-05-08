@@ -1,0 +1,119 @@
+{
+  "version": "2.0",
+  "n_chunks": 15,
+  "chunks": [
+    {
+      "id": "gr_global",
+      "source": "artifacts/gutenberg_richter_params.json",
+      "topic": "gutenberg_richter",
+      "title": "Gutenberg-Richter Parametreleri — Kahramanmaraş Bölgesi",
+      "content": "Gutenberg-Richter analizi sonuçları (Olasılıksal Sismik Tehlike — deprem tahmini değildir). Katalog: 42,078 olay, 2023-02-06 – 2023-08-05, T=0.49 yıl. Mc=1.8. b-değeri=0.7400±0.0053 (MLE, Aki 1965). a-değeri=5.9434. UYARI: Katalog artçı sarsıntı dönemi kapsamaktadır. Yıllık oranlar Omori düzeltmesi (50×) ile arka plan sismisitesine uyarlanmalıdır.",
+      "rates": {
+        "M3": "λ=5289.7282/yr T=0yr P(50yr)=1.000",
+        "M4": "λ=962.5964/yr T=0yr P(50yr)=1.000",
+        "M5": "λ=175.1681/yr T=0yr P(50yr)=1.000",
+        "M6": "λ=31.8762/yr T=0yr P(50yr)=1.000",
+        "M7": "λ=5.8007/yr T=0yr P(50yr)=1.000"
+      }
+    },
+    {
+      "id": "spatial_hazard_grid_summary",
+      "source": "artifacts/spatial_hazard_grid.csv",
+      "topic": "spatial_hazard",
+      "title": "Uzamsal Tehlike Izgarası — Kahramanmaraş Bölgesi (0.5°×0.5° hücreler)",
+      "content": "Uzamsal G-R analizi: 34 hücre (≥20 olay). b-değeri aralığı: 0.579–0.990. P(M≥6, 50yr) Omori-düzeltmeli aralığı: 0.004–0.994. Enlem kapsamı: 36.2°–38.8°N. Boylam kapsamı: 35.2°–39.2°E.",
+      "note": "Omori düzeltmesi (50×) artçı sarsıntı dönemini arka plan sismisitesine çevirmek için uygulanmıştır."
+    },
+    {
+      "id": "hazard_İstanbul_Anadolu",
+      "source": "artifacts/hazard_calculator_validation.json",
+      "topic": "hazard_probability",
+      "title": "Sismik Tehlike — İstanbul (Anadolu)",
+      "content": "İstanbul (Anadolu) için olasılıksal sismik tehlike (deprem tahmini değildir). Bölge: marmara. M≥5.0, 50yr: λ=1.0000/yr T=1yr P=100.0%. M≥6.0, 50yr: λ=0.1122/yr T=9yr P=99.6%. Tehlike seviyesi: Çok Yüksek Tehlike. Kaynak: Ambraseys et al. 2002; AFAD TDTH 2018."
+    },
+    {
+      "id": "hazard_Ankara",
+      "source": "artifacts/hazard_calculator_validation.json",
+      "topic": "hazard_probability",
+      "title": "Sismik Tehlike — Ankara",
+      "content": "Ankara için olasılıksal sismik tehlike (deprem tahmini değildir). Bölge: central_anatolia. M≥5.0, 50yr: λ=0.1500/yr T=7yr P=99.9%. M≥6.0, 50yr: λ=0.0212/yr T=47yr P=65.3%. Tehlike seviyesi: Çok Yüksek Tehlike. Kaynak: Kalkan & Gulkan 2004."
+    },
+    {
+      "id": "hazard_İzmir",
+      "source": "artifacts/hazard_calculator_validation.json",
+      "topic": "hazard_probability",
+      "title": "Sismik Tehlike — İzmir",
+      "content": "İzmir için olasılıksal sismik tehlike (deprem tahmini değildir). Bölge: aegean. M≥5.0, 50yr: λ=0.8000/yr T=1yr P=100.0%. M≥6.0, 50yr: λ=0.0800/yr T=12yr P=98.2%. Tehlike seviyesi: Çok Yüksek Tehlike. Kaynak: Papazachos et al. 1997; Kalkan & Gulkan 2004."
+    },
+    {
+      "id": "hazard_Kahramanmaraş",
+      "source": "artifacts/hazard_calculator_validation.json",
+      "topic": "hazard_probability",
+      "title": "Sismik Tehlike — Kahramanmaraş",
+      "content": "Kahramanmaraş için olasılıksal sismik tehlike (deprem tahmini değildir). Bölge: kahramanmaras_aftershock. M≥5.0, 50yr: λ=0.2179/yr T=5yr P=100.0%. M≥6.0, 50yr: λ=0.0390/yr T=26yr P=85.8%. Tehlike seviyesi: Çok Yüksek Tehlike. Kaynak: G-R spatial grid (n=2239; Omori-corrected)."
+    },
+    {
+      "id": "hazard_Bursa",
+      "source": "artifacts/hazard_calculator_validation.json",
+      "topic": "hazard_probability",
+      "title": "Sismik Tehlike — Bursa",
+      "content": "Bursa için olasılıksal sismik tehlike (deprem tahmini değildir). Bölge: marmara. M≥5.0, 50yr: λ=1.0000/yr T=1yr P=100.0%. M≥6.0, 50yr: λ=0.1122/yr T=9yr P=99.6%. Tehlike seviyesi: Çok Yüksek Tehlike. Kaynak: Ambraseys et al. 2002; AFAD TDTH 2018."
+    },
+    {
+      "id": "artifact_gutenberg_richter_params_json",
+      "source": "artifacts/gutenberg_richter_params.json",
+      "topic": "project_results",
+      "title": "G-R analizi parametreleri (b-değeri, a-değeri, Mc, yıllık oranlar)",
+      "content": "Proje eseri: gutenberg_richter_params.json. Açıklama: G-R analizi parametreleri (b-değeri, a-değeri, Mc, yıllık oranlar)."
+    },
+    {
+      "id": "artifact_hazard_calculator_validation_json",
+      "source": "artifacts/hazard_calculator_validation.json",
+      "topic": "project_results",
+      "title": "5 şehir için OSTA tehlike doğrulama (İstanbul, Ankara, İzmir, Kahramanmaraş, Bursa)",
+      "content": "Proje eseri: hazard_calculator_validation.json. Açıklama: 5 şehir için OSTA tehlike doğrulama (İstanbul, Ankara, İzmir, Kahramanmaraş, Bursa)."
+    },
+    {
+      "id": "artifact_marmara_adaptation_results_json",
+      "source": "artifacts/marmara_adaptation_results.json",
+      "topic": "project_results",
+      "title": "Marmara alan uyarlama — GPD artçı sarsıntı→arka plan, recall=1.000",
+      "content": "Proje eseri: marmara_adaptation_results.json. Açıklama: Marmara alan uyarlama — GPD artçı sarsıntı→arka plan, recall=1.000."
+    },
+    {
+      "id": "artifact_phase_picking_refined_json",
+      "source": "artifacts/phase_picking_refined.json",
+      "topic": "project_results",
+      "title": "P-faz seçim iyileştirmesi — AIC medyan=0.650s",
+      "content": "Proje eseri: phase_picking_refined.json. Açıklama: P-faz seçim iyileştirmesi — AIC medyan=0.650s."
+    },
+    {
+      "id": "artifact_s_phase_improved_json",
+      "source": "artifacts/s_phase_improved.json",
+      "topic": "project_results",
+      "title": "S-faz iyileştirmesi — S-optimized model medyan=1.740s",
+      "content": "Proje eseri: s_phase_improved.json. Açıklama: S-faz iyileştirmesi — S-optimized model medyan=1.740s."
+    },
+    {
+      "id": "artifact_final_evaluation_metrics_json",
+      "source": "artifacts/final_evaluation_metrics.json",
+      "topic": "project_results",
+      "title": "Final model değerlendirmesi — GPD-FT recall=1.000, Ensemble recall=1.000",
+      "content": "Proje eseri: final_evaluation_metrics.json. Açıklama: Final model değerlendirmesi — GPD-FT recall=1.000, Ensemble recall=1.000."
+    },
+    {
+      "id": "artifact_small_event_evaluation_json",
+      "source": "artifacts/small_event_evaluation.json",
+      "topic": "project_results",
+      "title": "M<2.0 mikro-sismik olay değerlendirmesi — Ensemble recall=1.000 tüm bantlarda",
+      "content": "Proje eseri: small_event_evaluation.json. Açıklama: M<2.0 mikro-sismik olay değerlendirmesi — Ensemble recall=1.000 tüm bantlarda."
+    },
+    {
+      "id": "artifact_marmara_extended_results_json",
+      "source": "artifacts/marmara_extended_results.json",
+      "topic": "project_results",
+      "title": "Marmara coğrafi genelleme — Ensemble recall=0.9991",
+      "content": "Proje eseri: marmara_extended_results.json. Açıklama: Marmara coğrafi genelleme — Ensemble recall=0.9991."
+    }
+  ]
+}

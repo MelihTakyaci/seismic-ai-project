@@ -1,0 +1,67 @@
+{
+  "description": "Gutenberg-Richter parameters for Kahramanmara\u015f aftershock region. Long-term statistical seismic hazard (sismik tehlike analizi). NOT earthquake prediction (deprem tahmini).",
+  "catalog_info": {
+    "n_total_events": 42078,
+    "date_start": "2023-02-06",
+    "date_end": "2023-08-05",
+    "T_years": 0.493,
+    "lat_bounds": [
+      36.0,
+      39.0
+    ],
+    "lon_bounds": [
+      35.0,
+      39.5
+    ]
+  },
+  "gr_fit": {
+    "Mc": 2.0,
+    "b_value": 0.7577,
+    "b_std": 0.0067,
+    "a_value": 5.9868,
+    "N_above_Mc": 14591,
+    "method": "Maximum Likelihood (Aki 1965); Mc via MAXC (Woessner & Wiemer 2005)"
+  },
+  "annual_rates_and_probabilities": {
+    "M3": {
+      "magnitude_threshold": 3.0,
+      "annual_rate": 5172.589417,
+      "return_period_yr": 0.0,
+      "prob_10yr": 1.0,
+      "prob_50yr": 1.0,
+      "prob_100yr": 1.0
+    },
+    "M4": {
+      "magnitude_threshold": 4.0,
+      "annual_rate": 903.677017,
+      "return_period_yr": 0.0,
+      "prob_10yr": 1.0,
+      "prob_50yr": 1.0,
+      "prob_100yr": 1.0
+    },
+    "M5": {
+      "magnitude_threshold": 5.0,
+      "annual_rate": 157.876855,
+      "return_period_yr": 0.0,
+      "prob_10yr": 1.0,
+      "prob_50yr": 1.0,
+      "prob_100yr": 1.0
+    },
+    "M6": {
+      "magnitude_threshold": 6.0,
+      "annual_rate": 27.581869,
+      "return_period_yr": 0.0,
+      "prob_10yr": 1.0,
+      "prob_50yr": 1.0,
+      "prob_100yr": 1.0
+    },
+    "M7": {
+      "magnitude_threshold": 7.0,
+      "annual_rate": 4.818689,
+      "return_period_yr": 0.2,
+      "prob_10yr": 1.0,
+      "prob_50yr": 1.0,
+      "prob_100yr": 1.0
+    }
+  }
+}

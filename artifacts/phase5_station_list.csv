@@ -1,0 +1,16 @@
+network,station,latitude,longitude,dist_km,dist_bin,hh_channels,role
+KO,GAZ,37.1721,37.2096,15.8,near,"HHE,HHN,HHZ",primary
+KO,KMRS,37.5087,36.9,39.9,near,"HHE,HHN,HHZ",primary
+KO,KOZT,37.4795,35.8264,112.2,mid,"HHE,HHN,HHZ",primary
+KO,CEYT,37.0105,35.7478,115.2,mid,"HHE,HHN,HHZ",primary
+KO,TAHT,36.3755,36.1855,115.8,mid,"HHE,HHN,HHZ",primary
+KO,SARI,38.4072,36.4181,148.2,mid,"HHE,HHN,HHZ",primary
+KO,URFA,37.4409,38.8213,161.2,far,"HHE,HHN,HHZ",primary
+KO,DARE,38.5712,37.4832,161.2,far,"HHE,HHN,HHZ",primary
+KO,KARA,37.2607,35.0547,175.4,far,"HHE,HHN,HHZ",primary
+KO,BNN,38.8521,35.8472,214.3,far,"HHE,HHN,HHZ",primary
+KO,MERS,36.8678,34.522,225.3,far,"HHE,HHN,HHZ",primary
+KO,SVRC,38.3775,39.306,241.0,far,"HHE,HHN,HHZ",primary
+KO,GULA,38.3444,34.236,278.5,far,"HHE,HHN,HHZ",alternate
+KO,DYBB,37.9532,40.1393,287.5,far,"HHE,HHN,HHZ",alternate
+KO,YESY,37.7825,33.7431,298.2,far,"HHE,HHN,HHZ",alternate

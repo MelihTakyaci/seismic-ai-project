@@ -1,0 +1,124 @@
+{
+  "phase": "5",
+  "n_stations": 12,
+  "pilot_window": "2023-02-06 to 2023-08-06 (6 months)",
+  "catalog_source": "EMSC_FDSN",
+  "models": {
+    "stalta": {
+      "model": "STA/LTA",
+      "n_event_windows": 11280,
+      "TP": 6329,
+      "FN": 4951,
+      "recall": 0.5611,
+      "p_pick_mae_s": null,
+      "n_p_pick_errors": 0,
+      "by_magnitude": {
+        "M 2.0-3.0": {
+          "n_events": 9254,
+          "TP": 5093,
+          "FN": 4161,
+          "recall": 0.5504
+        },
+        "M 3.0-4.0": {
+          "n_events": 1757,
+          "TP": 1064,
+          "FN": 693,
+          "recall": 0.6056
+        },
+        "M>=4.0": {
+          "n_events": 269,
+          "TP": 172,
+          "FN": 97,
+          "recall": 0.6394
+        }
+      }
+    },
+    "phasenet": {
+      "model": "PhaseNet",
+      "n_event_windows": 11280,
+      "TP": 4553,
+      "FN": 6727,
+      "recall": 0.4036,
+      "p_pick_mae_s": 11.5232,
+      "n_p_pick_errors": 5919,
+      "by_magnitude": {
+        "M 2.0-3.0": {
+          "n_events": 9254,
+          "TP": 3616,
+          "FN": 5638,
+          "recall": 0.3907
+        },
+        "M 3.0-4.0": {
+          "n_events": 1757,
+          "TP": 808,
+          "FN": 949,
+          "recall": 0.4599
+        },
+        "M>=4.0": {
+          "n_events": 269,
+          "TP": 129,
+          "FN": 140,
+          "recall": 0.4796
+        }
+      }
+    },
+    "eqtransformer": {
+      "model": "EQTransformer",
+      "n_event_windows": 11280,
+      "TP": 763,
+      "FN": 10517,
+      "recall": 0.0676,
+      "p_pick_mae_s": 14.1616,
+      "n_p_pick_errors": 976,
+      "by_magnitude": {
+        "M 2.0-3.0": {
+          "n_events": 9254,
+          "TP": 647,
+          "FN": 8607,
+          "recall": 0.0699
+        },
+        "M 3.0-4.0": {
+          "n_events": 1757,
+          "TP": 104,
+          "FN": 1653,
+          "recall": 0.0592
+        },
+        "M>=4.0": {
+          "n_events": 269,
+          "TP": 12,
+          "FN": 257,
+          "recall": 0.0446
+        }
+      }
+    },
+    "gpd": {
+      "model": "GPD",
+      "n_event_windows": 11280,
+      "TP": 7145,
+      "FN": 4135,
+      "recall": 0.6334,
+      "p_pick_mae_s": 21.6033,
+      "n_p_pick_errors": 10779,
+      "by_magnitude": {
+        "M 2.0-3.0": {
+          "n_events": 9254,
+          "TP": 5820,
+          "FN": 3434,
+          "recall": 0.6289
+        },
+        "M 3.0-4.0": {
+          "n_events": 1757,
+          "TP": 1147,
+          "FN": 610,
+          "recall": 0.6528
+        },
+        "M>=4.0": {
+          "n_events": 269,
+          "TP": 178,
+          "FN": 91,
+          "recall": 0.6617
+        }
+      }
+    }
+  }
+}

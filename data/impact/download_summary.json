@@ -1,0 +1,22 @@
+{
+  "population_grid": {
+    "ok": false,
+    "note": "fallback: T\u00dc\u0130K 2023 province centroids (worldpop.tif too large)",
+    "path": "/Users/bertugtas/seismic-ai-project/data/impact/province_population.csv"
+  },
+  "turkey_provinces": {
+    "ok": true,
+    "note": "downloaded from cihadturhan/tr-geojson",
+    "path": "/Users/bertugtas/seismic-ai-project/data/impact/turkey_provinces.geojson"
+  },
+  "building_stock": {
+    "ok": true,
+    "note": "cached",
+    "path": "/Users/bertugtas/seismic-ai-project/data/impact/building_stock.csv"
+  },
+  "calibration_data": {
+    "ok": true,
+    "note": "written from literature",
+    "path": "/Users/bertugtas/seismic-ai-project/data/impact/calibration_data.json"
+  }
+}

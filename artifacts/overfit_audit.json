@@ -1,0 +1,45 @@
+{
+  "check1_aug_contamination": {
+    "pass": true,
+    "n_contaminated": 0
+  },
+  "check2_event_leakage": {
+    "shared_events": 568,
+    "unique_test_events": 127,
+    "total_test_events": 695,
+    "shared_pct": 81.7
+  },
+  "check3_event_isolated_recall": {
+    "full_test": {
+      "n": 944,
+      "gpd_recall": 1.0,
+      "ens_recall": 1.0
+    },
+    "event_isolated": {
+      "n": 135,
+      "gpd_recall": 1.0,
+      "ens_recall": 1.0
+    },
+    "shared_events": {
+      "n": 809,
+      "gpd_recall": 1.0,
+      "ens_recall": 1.0
+    },
+    "pass": true
+  },
+  "check4_label_sanity": {
+    "n_labeled": 944,
+    "p_min": 3110.0,
+    "p_max": 5996.0,
+    "p_mean": 4917.468220338983,
+    "p_std": 689.3646936530519,
+    "out_of_range": 0,
+    "pass": false
+  },
+  "check5_distribution": {
+    "train_p_mean": 4964.593023255814,
+    "test_p_mean": 4917.468220338983,
+    "mean_shift_samples": 47.12480291683096,
+    "pass": true
+  }
+}

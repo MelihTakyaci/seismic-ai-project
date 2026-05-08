@@ -1,0 +1,9 @@
+obspy==1.4.1
+seisbench==0.7.0
+pandas==2.2.3
+numpy==1.26.4
+matplotlib==3.9.4
+scipy==1.13.1
+requests==2.32.3
+streamlit>=1.35.0
+plotly>=6.0.0

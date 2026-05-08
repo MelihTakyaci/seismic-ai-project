@@ -1,0 +1,78 @@
+{
+  "phase": "small_event_evaluation",
+  "n_windows_evaluated": 1036,
+  "small_event_recall": {
+    "M 0.5\u20131.0": {
+      "n": 353,
+      "gpd_ft_recall": 0.9887,
+      "pn_final_recall": 0.0198,
+      "pn_fixed_recall": 0.9433,
+      "ensemble_recall": 1.0
+    },
+    "M 1.0\u20131.5": {
+      "n": 343,
+      "gpd_ft_recall": 0.9913,
+      "pn_final_recall": 0.0408,
+      "pn_fixed_recall": 0.9504,
+      "ensemble_recall": 1.0
+    },
+    "M 1.5\u20132.0": {
+      "n": 340,
+      "gpd_ft_recall": 0.9912,
+      "pn_final_recall": 0.05,
+      "pn_fixed_recall": 0.9706,
+      "ensemble_recall": 0.9971
+    }
+  },
+  "complete_magnitude_table": {
+    "M 0.5\u20131.0": {
+      "n": 353,
+      "gpd_ft": 0.9887,
+      "pn_fixed": 0.9433,
+      "ensemble": 1.0,
+      "source": "small_event_download"
+    },
+    "M 1.0\u20131.5": {
+      "n": 343,
+      "gpd_ft": 0.9913,
+      "pn_fixed": 0.9504,
+      "ensemble": 1.0,
+      "source": "small_event_download"
+    },
+    "M 1.5\u20132.0": {
+      "n": 340,
+      "gpd_ft": 0.9912,
+      "pn_fixed": 0.9706,
+      "ensemble": 0.9971,
+      "source": "small_event_download"
+    },
+    "M 2.0\u20133.0": {
+      "n": 0,
+      "gpd_ft": null,
+      "pn_fixed": null,
+      "ensemble": null,
+      "source": "test_set_existing"
+    },
+    "M 3.0\u20134.0": {
+      "n": 0,
+      "gpd_ft": null,
+      "pn_fixed": null,
+      "ensemble": null,
+      "source": "test_set_existing"
+    },
+    "M \u2265 4.0": {
+      "n": 0,
+      "gpd_ft": null,
+      "pn_fixed": null,
+      "ensemble": null,
+      "source": "test_set_existing"
+    }
+  },
+  "detection_criterion": {
+    "window": "[origin - 5.0s, origin + 25.0s]",
+    "gpd_ft_threshold": 0.5,
+    "pn_fixed_threshold": 0.1,
+    "ensemble_threshold": 0.15
+  },
+  "note": "P pick times not available for M<2.0 events. Detection evaluated using known origin time \u00b1 window. Recall is an upper bound \u2014 some detections may be background aftershock triggers rather than target event P waves."
+}

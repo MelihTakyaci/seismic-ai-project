@@ -1,0 +1,117 @@
+{
+  "description": "Probabilistic seismic hazard calculator validation. Olasılıksal Sismik Tehlike Analizi (OSTA). NOT earthquake prediction. Poisson long-term statistical estimates.",
+  "methodology": {
+    "kahramanmaras_region": "G-R parameters from 42,078-event catalog (0.49yr). Omori aftershock correction factor=50 applied for background estimate. b-value=0.74 (MLE, Aki 1965).",
+    "other_regions": "Published background seismicity rates: Ambraseys et al. 2002, Kalkan & Gulkan 2004, AFAD TDTH 2018.",
+    "model": "Poisson: P(t) = 1 - exp(-lambda * t)"
+  },
+  "validation_cities": {
+    "İstanbul (Anadolu)": {
+      "lat": 40.99,
+      "lon": 29.03,
+      "region": "marmara",
+      "M5_50yr": {
+        "annual_rate": 1.0,
+        "return_period_yr": 1.0,
+        "probability": 1.0,
+        "probability_pct": 100.0
+      },
+      "M6_50yr": {
+        "annual_rate": 0.112202,
+        "return_period_yr": 8.9,
+        "probability": 0.9963,
+        "probability_pct": 99.6
+      },
+      "hazard_level": "Çok Yüksek Tehlike",
+      "hazard_code": "very_high",
+      "source": "Ambraseys et al. 2002; AFAD TDTH 2018"
+    },
+    "Ankara": {
+      "lat": 39.92,
+      "lon": 32.85,
+      "region": "central_anatolia",
+      "M5_50yr": {
+        "annual_rate": 0.15,
+        "return_period_yr": 6.7,
+        "probability": 0.9994,
+        "probability_pct": 99.9
+      },
+      "M6_50yr": {
+        "annual_rate": 0.021188,
+        "return_period_yr": 47.2,
+        "probability": 0.6533,
+        "probability_pct": 65.3
+      },
+      "hazard_level": "Çok Yüksek Tehlike",
+      "hazard_code": "very_high",
+      "source": "Kalkan & Gulkan 2004"
+    },
+    "İzmir": {
+      "lat": 38.42,
+      "lon": 27.13,
+      "region": "aegean",
+      "M5_50yr": {
+        "annual_rate": 0.8,
+        "return_period_yr": 1.2,
+        "probability": 1.0,
+        "probability_pct": 100.0
+      },
+      "M6_50yr": {
+        "annual_rate": 0.08,
+        "return_period_yr": 12.5,
+        "probability": 0.9817,
+        "probability_pct": 98.2
+      },
+      "hazard_level": "Çok Yüksek Tehlike",
+      "hazard_code": "very_high",
+      "source": "Papazachos et al. 1997; Kalkan & Gulkan 2004"
+    },
+    "Kahramanmaraş": {
+      "lat": 37.58,
+      "lon": 36.94,
+      "region": "kahramanmaras_aftershock",
+      "M5_50yr": {
+        "annual_rate": 0.217886,
+        "return_period_yr": 4.6,
+        "probability": 1.0,
+        "probability_pct": 100.0
+      },
+      "M6_50yr": {
+        "annual_rate": 0.039033,
+        "return_period_yr": 25.6,
+        "probability": 0.858,
+        "probability_pct": 85.8
+      },
+      "hazard_level": "Çok Yüksek Tehlike",
+      "hazard_code": "very_high",
+      "source": "G-R spatial grid (n=2239; Omori-corrected)"
+    },
+    "Bursa": {
+      "lat": 40.18,
+      "lon": 29.06,
+      "region": "marmara",
+      "M5_50yr": {
+        "annual_rate": 1.0,
+        "return_period_yr": 1.0,
+        "probability": 1.0,
+        "probability_pct": 100.0
+      },
+      "M6_50yr": {
+        "annual_rate": 0.112202,
+        "return_period_yr": 8.9,
+        "probability": 0.9963,
+        "probability_pct": 99.6
+      },
+      "hazard_level": "Çok Yüksek Tehlike",
+      "hazard_code": "very_high",
+      "source": "Ambraseys et al. 2002; AFAD TDTH 2018"
+    }
+  },
+  "hazard_thresholds": {
+    "low": "P(M5,50yr) < 10%",
+    "moderate": "P(M5,50yr) 10-40%",
+    "high": "P(M5,50yr) 40-70%",
+    "very_high": "P(M5,50yr) > 70%"
+  },
+  "disclaimer": "Tüm değerler Poisson istatistiğine dayalı uzun vadeli sismik tehlike tahminleridir. Kısa vadeli deprem tahmini değildir ve yapılamaz. Bu analiz OSTA (Olasılıksal Sismik Tehlike Analizi) metodolojisini kullanmaktadır."
+}

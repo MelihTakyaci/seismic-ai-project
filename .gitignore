@@ -1,0 +1,58 @@
+# ── Large data files (too large for GitHub) ───────────────────────────────────
+data/raw/
+data/windows/
+data/finetune_dataset/
+data/augmented_dataset/
+data/impact/population_grid.tif
+*.mseed
+*.hdf5
+*.h5
+*.npz
+
+# Model weights (too large for GitHub — download separately)
+models/*.pt
+models/*.pth
+
+# ISC background catalog (large, re-fetchable)
+data/catalog/isc_background_catalog.csv
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pyenv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+*.key
+.streamlit/secrets.toml
+
+# ── System ────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Keep these small/essential data files ────────────────────────────────────
+!data/catalog/koeri_pilot_catalog.csv
+!data/catalog/phase5_catalog.csv
+!data/catalog/small_events_catalog.csv
+!data/impact/building_stock.csv
+!data/impact/calibration_data.json
+!data/impact/province_population.csv
+!data/impact/turkey_provinces.geojson
+!data/impact/download_summary.json
+!artifacts/
+!figures/
+!llm/index/

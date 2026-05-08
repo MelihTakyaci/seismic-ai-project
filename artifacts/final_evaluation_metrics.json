@@ -1,0 +1,196 @@
+{
+  "phase": "final_evaluation",
+  "label_source": "EMSC analyst picks (script 19) + TauPy fallback",
+  "n_test_windows": 944,
+  "thresholds": {
+    "stalta": 3.0,
+    "phasenet_zs": 0.3,
+    "eqt_zs": 0.1,
+    "gpd_zs": 0.5,
+    "phasenet_ft": 0.05,
+    "gpd_ft": 0.5,
+    "ensemble": 0.15
+  },
+  "STA/LTA": {
+    "All": {
+      "n_windows": 944,
+      "n_detected": 719,
+      "recall": 0.7617,
+      "p_mae_s": 3.778
+    },
+    "M2.0-3.0": {
+      "n_windows": 774,
+      "n_detected": 567,
+      "recall": 0.7326,
+      "p_mae_s": 3.797
+    },
+    "M3.0-4.0": {
+      "n_windows": 143,
+      "n_detected": 125,
+      "recall": 0.8741,
+      "p_mae_s": 3.64
+    },
+    "M\u22654.0": {
+      "n_windows": 27,
+      "n_detected": 27,
+      "recall": 1.0,
+      "p_mae_s": 4.025
+    }
+  },
+  "PhaseNet (zero-shot)": {
+    "All": {
+      "n_windows": 944,
+      "n_detected": 655,
+      "recall": 0.6939,
+      "p_mae_s": 2.232
+    },
+    "M2.0-3.0": {
+      "n_windows": 774,
+      "n_detected": 519,
+      "recall": 0.6705,
+      "p_mae_s": 2.232
+    },
+    "M3.0-4.0": {
+      "n_windows": 143,
+      "n_detected": 114,
+      "recall": 0.7972,
+      "p_mae_s": 2.215
+    },
+    "M\u22654.0": {
+      "n_windows": 27,
+      "n_detected": 22,
+      "recall": 0.8148,
+      "p_mae_s": 2.326
+    }
+  },
+  "EQTransformer (zero-shot)": {
+    "All": {
+      "n_windows": 944,
+      "n_detected": 166,
+      "recall": 0.1758,
+      "p_mae_s": 1.498
+    },
+    "M2.0-3.0": {
+      "n_windows": 774,
+      "n_detected": 136,
+      "recall": 0.1757,
+      "p_mae_s": 1.241
+    },
+    "M3.0-4.0": {
+      "n_windows": 143,
+      "n_detected": 24,
+      "recall": 0.1678,
+      "p_mae_s": 3.065
+    },
+    "M\u22654.0": {
+      "n_windows": 27,
+      "n_detected": 6,
+      "recall": 0.2222,
+      "p_mae_s": 1.058
+    }
+  },
+  "GPD (zero-shot)": {
+    "All": {
+      "n_windows": 944,
+      "n_detected": 842,
+      "recall": 0.8919,
+      "p_mae_s": 4.115
+    },
+    "M2.0-3.0": {
+      "n_windows": 774,
+      "n_detected": 678,
+      "recall": 0.876,
+      "p_mae_s": 4.314
+    },
+    "M3.0-4.0": {
+      "n_windows": 143,
+      "n_detected": 138,
+      "recall": 0.965,
+      "p_mae_s": 3.257
+    },
+    "M\u22654.0": {
+      "n_windows": 27,
+      "n_detected": 26,
+      "recall": 0.963,
+      "p_mae_s": 3.498
+    }
+  },
+  "PhaseNet (fine-tuned)": {
+    "All": {
+      "n_windows": 944,
+      "n_detected": 81,
+      "recall": 0.0858,
+      "p_mae_s": 7.164
+    },
+    "M2.0-3.0": {
+      "n_windows": 774,
+      "n_detected": 70,
+      "recall": 0.0904,
+      "p_mae_s": 7.588
+    },
+    "M3.0-4.0": {
+      "n_windows": 143,
+      "n_detected": 9,
+      "recall": 0.0629,
+      "p_mae_s": 4.663
+    },
+    "M\u22654.0": {
+      "n_windows": 27,
+      "n_detected": 2,
+      "recall": 0.0741,
+      "p_mae_s": 3.6
+    }
+  },
+  "GPD (fine-tuned)": {
+    "All": {
+      "n_windows": 944,
+      "n_detected": 944,
+      "recall": 1.0,
+      "p_mae_s": 4.779
+    },
+    "M2.0-3.0": {
+      "n_windows": 774,
+      "n_detected": 774,
+      "recall": 1.0,
+      "p_mae_s": 5.157
+    },
+    "M3.0-4.0": {
+      "n_windows": 143,
+      "n_detected": 143,
+      "recall": 1.0,
+      "p_mae_s": 3.1
+    },
+    "M\u22654.0": {
+      "n_windows": 27,
+      "n_detected": 27,
+      "recall": 1.0,
+      "p_mae_s": 2.859
+    }
+  },
+  "Ensemble (PhaseNet+GPD)": {
+    "All": {
+      "n_windows": 944,
+      "n_detected": 944,
+      "recall": 1.0,
+      "p_mae_s": 4.814
+    },
+    "M2.0-3.0": {
+      "n_windows": 774,
+      "n_detected": 774,
+      "recall": 1.0,
+      "p_mae_s": 5.21
+    },
+    "M3.0-4.0": {
+      "n_windows": 143,
+      "n_detected": 143,
+      "recall": 1.0,
+      "p_mae_s": 3.031
+    },
+    "M\u22654.0": {
+      "n_windows": 27,
+      "n_detected": 27,
+      "recall": 1.0,
+      "p_mae_s": 2.92
+    }
+  }
+}

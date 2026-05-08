@@ -1,0 +1,77 @@
+{
+  "description": "5 şehir için olasılıksal sismik tehlike doğrulaması. Deprem tahmini değildir — Poisson uzun vadeli istatistik. Kaynak: ISC + EMSC katalogları, 55,552 olay.",
+  "methodology": "Poisson: P(t)=1-exp(-λt). Kahramanmaraş için Omori-Utsu düzeltmesi 50x.",
+  "cities": {
+    "İstanbul": {
+      "lat": 41.0,
+      "lon": 29.0,
+      "region": "marmara",
+      "P_M5_50yr_pct": 100.0,
+      "return_period_M5": 1.0,
+      "P_M6_50yr_pct": 99.6,
+      "return_period_M6": 8.9,
+      "P_M7_50yr_pct": 46.7,
+      "return_period_M7": 79.4,
+      "hazard_level": "Çok Yüksek Tehlike",
+      "hazard_color": "#ef5350",
+      "source": "Ambraseys et al. 2002; AFAD TDTH 2018"
+    },
+    "Ankara": {
+      "lat": 39.9,
+      "lon": 32.8,
+      "region": "central_anatolia",
+      "P_M5_50yr_pct": 99.9,
+      "return_period_M5": 6.7,
+      "P_M6_50yr_pct": 65.3,
+      "return_period_M6": 47.2,
+      "P_M7_50yr_pct": 13.9,
+      "return_period_M7": 334.1,
+      "hazard_level": "Çok Yüksek Tehlike",
+      "hazard_color": "#ef5350",
+      "source": "Kalkan & Gulkan 2004"
+    },
+    "İzmir": {
+      "lat": 38.4,
+      "lon": 27.1,
+      "region": "aegean",
+      "P_M5_50yr_pct": 100.0,
+      "return_period_M5": 1.2,
+      "P_M6_50yr_pct": 98.2,
+      "return_period_M6": 12.5,
+      "P_M7_50yr_pct": 33.0,
+      "return_period_M7": 125.0,
+      "hazard_level": "Çok Yüksek Tehlike",
+      "hazard_color": "#ef5350",
+      "source": "Papazachos et al. 1997; Kalkan & Gulkan 2004"
+    },
+    "Kahramanmaraş": {
+      "lat": 37.6,
+      "lon": 36.9,
+      "region": "kahramanmaras_aftershock",
+      "P_M5_50yr_pct": 100.0,
+      "return_period_M5": 4.6,
+      "P_M6_50yr_pct": 85.8,
+      "return_period_M6": 25.6,
+      "P_M7_50yr_pct": 29.5,
+      "return_period_M7": 143.0,
+      "hazard_level": "Çok Yüksek Tehlike",
+      "hazard_color": "#ef5350",
+      "source": "G-R spatial grid (n=2239; Omori-corrected)"
+    },
+    "Bursa": {
+      "lat": 40.2,
+      "lon": 29.1,
+      "region": "marmara",
+      "P_M5_50yr_pct": 100.0,
+      "return_period_M5": 1.0,
+      "P_M6_50yr_pct": 99.6,
+      "return_period_M6": 8.9,
+      "P_M7_50yr_pct": 46.7,
+      "return_period_M7": 79.4,
+      "hazard_level": "Çok Yüksek Tehlike",
+      "hazard_color": "#ef5350",
+      "source": "Ambraseys et al. 2002; AFAD TDTH 2018"
+    }
+  },
+  "disclaimer": "Bu değerler Poisson istatistiğine dayalı uzun vadeli sismik tehlike tahminidir. Kısa vadeli deprem tahmini değildir."
+}

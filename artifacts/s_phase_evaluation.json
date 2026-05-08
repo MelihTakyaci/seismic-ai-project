@@ -1,0 +1,38 @@
+{
+  "phase": "s_phase_evaluation",
+  "n_windows_with_s_label": 352,
+  "n_total_test": 944,
+  "s_label_source": "TauPy_theoretical",
+  "s_label_coverage_pct": 37.3,
+  "models": {
+    "GPD (Vp/Vs synth)": {
+      "n_windows": 352,
+      "n_detected": 352,
+      "recall": 1.0,
+      "s_mae_mean_s": 21.693,
+      "s_mae_median_s": 22.232
+    },
+    "PhaseNet final": {
+      "n_windows": 352,
+      "n_detected": 352,
+      "recall": 1.0,
+      "s_mae_mean_s": 12.146,
+      "s_mae_median_s": 12.135
+    },
+    "PhaseNet fixed": {
+      "n_windows": 352,
+      "n_detected": 352,
+      "recall": 1.0,
+      "s_mae_mean_s": 5.677,
+      "s_mae_median_s": 4.555
+    },
+    "EQTransformer (ft)": {
+      "n_windows": 352,
+      "n_detected": 1,
+      "recall": 0.0028,
+      "s_mae_mean_s": 2.3,
+      "s_mae_median_s": 2.3
+    }
+  },
+  "note": "S labels are TauPy theoretical \u2014 MAE is an upper bound on true S-pick error. GPD S estimate uses Vp/Vs=1.73 ratio applied to GPD P pick (synthetic). PhaseNet final has broken P channel but S channel may still function. True S-pick validation requires analyst S picks (not available in this project)."
+}

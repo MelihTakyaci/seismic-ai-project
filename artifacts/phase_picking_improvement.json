@@ -1,0 +1,38 @@
+{
+  "phase": "phase_picking_improvement",
+  "n_test_windows": 948,
+  "label_source_breakdown": {
+    "EMSC_analyst": 743,
+    "TauPy_theoretical": 205
+  },
+  "approach_1_label_source": {
+    "EMSC": {
+      "n": 743,
+      "gpd_coarse_mae_s": 3.229,
+      "gpd_aic_mae_s": 3.183
+    },
+    "TauPy": {
+      "n": 205,
+      "gpd_coarse_mae_s": 10.407,
+      "gpd_aic_mae_s": 10.381
+    }
+  },
+  "approach_2_aic": {
+    "vs_metadata_labels": {
+      "gpd_coarse_mae_s": 4.781,
+      "gpd_aic_mae_s": 4.74,
+      "ens_coarse_mae_s": 4.817,
+      "ens_aic_mae_s": 4.776
+    },
+    "vs_emsc_analyst_only": {
+      "n": 743,
+      "gpd_coarse_mae_s": 3.229,
+      "gpd_aic_mae_s": 3.184,
+      "ens_coarse_mae_s": 3.264,
+      "ens_aic_mae_s": 3.218
+    },
+    "aic_improved_fraction": 0.48
+  },
+  "target_met": false,
+  "note": "P-labels in metadata are already EMSC-corrected for 81% of test windows. Approach 1 confirms EMSC-referenced MAE \u2248 TauPy-referenced MAE (same labels after re-labeling). AIC refinement provides additional improvement on top of coarse model picks."
+}

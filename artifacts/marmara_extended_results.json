@@ -1,0 +1,84 @@
+{
+  "phase": "marmara_extended_evaluation",
+  "n_windows": 5838,
+  "n_stations": 28,
+  "stations": [
+    "b'KO.ADVT'",
+    "b'KO.ARMT'",
+    "b'KO.BGKT'",
+    "b'KO.CAVI'",
+    "b'KO.CRLT'",
+    "b'KO.CTKS'",
+    "b'KO.CTYL'",
+    "b'KO.EDC'",
+    "b'KO.ENEZ'",
+    "b'KO.ERIK'",
+    "b'KO.EZN'",
+    "b'KO.GAZK'",
+    "b'KO.GELI'",
+    "b'KO.GEML'",
+    "b'KO.ISK'",
+    "b'KO.KAVV'",
+    "b'KO.KCTX'",
+    "b'KO.KLYT'",
+    "b'KO.KRBG'",
+    "b'KO.LAP'",
+    "b'KO.MDNY'",
+    "b'KO.MRMT'",
+    "b'KO.RKY'",
+    "b'KO.SAUV'",
+    "b'KO.SILT'",
+    "b'KO.SLVT'",
+    "b'KO.YAYO'",
+    "b'KO.YLV'"
+  ],
+  "overall": {
+    "gpd_ft_recall": 0.9954,
+    "phasenet_fixed_recall": 0.7859,
+    "ensemble_recall": 0.9991
+  },
+  "by_magnitude": {
+    "M 0.0-1.5": {
+      "n": 101,
+      "gpd": 1.0,
+      "phasenet_fixed": 0.7129,
+      "ensemble": 1.0
+    },
+    "M 1.5-2.0": {
+      "n": 3638,
+      "gpd": 0.994,
+      "phasenet_fixed": 0.7683,
+      "ensemble": 0.9992
+    },
+    "M 2.0-3.0": {
+      "n": 1948,
+      "gpd": 0.9974,
+      "phasenet_fixed": 0.8152,
+      "ensemble": 0.999
+    },
+    "M 3.0-10.0": {
+      "n": 151,
+      "gpd": 1.0,
+      "phasenet_fixed": 0.8808,
+      "ensemble": 1.0
+    }
+  },
+  "geographic_comparison": {
+    "GPD-FT": {
+      "kahramanmaras": 1.0,
+      "marmara": 0.9954,
+      "delta": -0.0046
+    },
+    "PhaseNet-Fixed": {
+      "kahramanmaras": 0.91,
+      "marmara": 0.7859,
+      "delta": -0.1241
+    },
+    "Ensemble": {
+      "kahramanmaras": 1.0,
+      "marmara": 0.9991,
+      "delta": -0.0009
+    }
+  },
+  "note": "Detection window: origin \u00b1 [-5s, +25s]. Origin assumed at sample 3000 (project convention). No analyst P-picks in Marmara NPZs \u2014 recall is origin-time-based. Kahramanmaras reference uses fine-tuned model metrics from final_evaluation_metrics.json."
+}

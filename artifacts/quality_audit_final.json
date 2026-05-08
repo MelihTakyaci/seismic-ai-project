@@ -1,0 +1,115 @@
+{
+  "phase": "quality_audit_final",
+  "label_source": "EMSC analyst picks + TauPy fallback",
+  "n_test_windows": 944,
+  "definitive_table": [
+    {
+      "Model": "STA/LTA",
+      "Recall (all)": NaN,
+      "Recall (M2-3)": NaN,
+      "Recall (M\u22654)": NaN,
+      "P-MAE (s)": NaN,
+      "Prec (proxy)": 0.7815,
+      "FP-rate (pre-P)": 0.2129,
+      "Recall (excl.)": NaN,
+      "Fine-tuned": false
+    },
+    {
+      "Model": "PhaseNet (zero-shot)",
+      "Recall (all)": 0.6939,
+      "Recall (M2-3)": 0.6705,
+      "Recall (M\u22654)": 0.8148,
+      "P-MAE (s)": 2.232,
+      "Prec (proxy)": 0.843,
+      "FP-rate (pre-P)": 0.1292,
+      "Recall (excl.)": NaN,
+      "Fine-tuned": false
+    },
+    {
+      "Model": "EQTransformer (zero-shot)",
+      "Recall (all)": 0.1758,
+      "Recall (M2-3)": 0.1757,
+      "Recall (M\u22654)": 0.2222,
+      "P-MAE (s)": 1.498,
+      "Prec (proxy)": NaN,
+      "FP-rate (pre-P)": NaN,
+      "Recall (excl.)": NaN,
+      "Fine-tuned": false
+    },
+    {
+      "Model": "GPD (zero-shot)",
+      "Recall (all)": 0.8919,
+      "Recall (M2-3)": 0.876,
+      "Recall (M\u22654)": 0.963,
+      "P-MAE (s)": 4.115,
+      "Prec (proxy)": 0.6423,
+      "FP-rate (pre-P)": 0.4968,
+      "Recall (excl.)": NaN,
+      "Fine-tuned": false
+    },
+    {
+      "Model": "PhaseNet (fine-tuned) \u2021",
+      "Recall (all)": 0.0858,
+      "Recall (M2-3)": 0.0904,
+      "Recall (M\u22654)": 0.0741,
+      "P-MAE (s)": 7.164,
+      "Prec (proxy)": 0.75,
+      "FP-rate (pre-P)": 0.0286,
+      "Recall (excl.)": NaN,
+      "Fine-tuned": false
+    },
+    {
+      "Model": "GPD (fine-tuned)",
+      "Recall (all)": 1.0,
+      "Recall (M2-3)": 1.0,
+      "Recall (M\u22654)": 1.0,
+      "P-MAE (s)": 4.779,
+      "Prec (proxy)": 0.5097,
+      "FP-rate (pre-P)": 0.9619,
+      "Recall (excl.)": 1.0,
+      "Fine-tuned": false
+    },
+    {
+      "Model": "Ensemble (PhaseNet+GPD) \u2605",
+      "Recall (all)": 1.0,
+      "Recall (M2-3)": 1.0,
+      "Recall (M\u22654)": 1.0,
+      "P-MAE (s)": 4.814,
+      "Prec (proxy)": 0.5021,
+      "FP-rate (pre-P)": 0.9915,
+      "Recall (excl.)": 1.0,
+      "Fine-tuned": false
+    }
+  ],
+  "quality_flags": [
+    {
+      "check": "Augmentation contamination",
+      "result": "PASS \u2713"
+    },
+    {
+      "check": "Event-isolated recall",
+      "result": "PASS \u2713"
+    },
+    {
+      "check": "Event-level leakage",
+      "result": "81.7% shared (window-stratified split) \u26a0"
+    },
+    {
+      "check": "Temporal stability",
+      "result": "Early=1.000 Late=1.000 \u0394=+0.000 \u2713"
+    },
+    {
+      "check": "Station generalization",
+      "result": "Low-data=1.000 High-data=1.000 \u2713"
+    },
+    {
+      "check": "Ensemble FP (pre-P)",
+      "result": "0.992 \u2014 HIGH (dense aftershock background) \u26a0"
+    },
+    {
+      "check": "PhaseNet (fine-tuned)",
+      "result": "Recall=0.086 \u2014 loss-function regression, DO NOT use solo \u2717"
+    }
+  ],
+  "recommendation": "Use Ensemble (PhaseNet+GPD) for all demo and presentation purposes."
+}

@@ -1,0 +1,59 @@
+{
+  "pretrained": {
+    "recall": 0.4192,
+    "precision": 0.9958,
+    "f1": 0.5901,
+    "fp_per_hour": 20.0,
+    "p_pick_mae_s": 5.0266,
+    "TP": 719,
+    "FN": 996,
+    "FP": 3,
+    "n_event_windows": 1715,
+    "by_magnitude": {
+      "M 2.0-3.0": {
+        "n": 1397,
+        "TP": 572,
+        "recall": 0.4094
+      },
+      "M 3.0-4.0": {
+        "n": 271,
+        "TP": 125,
+        "recall": 0.4613
+      },
+      "M>=4.0": {
+        "n": 47,
+        "TP": 22,
+        "recall": 0.4681
+      }
+    }
+  },
+  "finetuned_threshold": 0.05,
+  "finetuned": {
+    "recall": 0.4239,
+    "precision": 0.9959,
+    "f1": 0.5947,
+    "fp_per_hour": 20.0,
+    "p_pick_mae_s": 6.0306,
+    "TP": 727,
+    "FN": 988,
+    "FP": 3,
+    "n_event_windows": 1715,
+    "by_magnitude": {
+      "M 2.0-3.0": {
+        "n": 1397,
+        "TP": 577,
+        "recall": 0.413
+      },
+      "M 3.0-4.0": {
+        "n": 271,
+        "TP": 126,
+        "recall": 0.4649
+      },
+      "M>=4.0": {
+        "n": 47,
+        "TP": 24,
+        "recall": 0.5106
+      }
+    }
+  }
+}

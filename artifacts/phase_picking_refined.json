@@ -1,0 +1,57 @@
+{
+  "phase": "refined_phase_picking",
+  "n_windows": 740,
+  "n_emsc_matched": 740,
+  "methods": {
+    "coarse_gpd": {
+      "mean": 3.2422,
+      "median": 0.7,
+      "p90": 11.85
+    },
+    "aic": {
+      "mean": 3.2223,
+      "median": 0.65,
+      "p90": 11.886,
+      "pct_improved": 0.5054
+    },
+    "stalta": {
+      "mean": 3.3817,
+      "median": 0.8,
+      "p90": 12.081,
+      "pct_improved": 0.3
+    },
+    "kurtosis": {
+      "mean": 3.2449,
+      "median": 0.74,
+      "p90": 11.633,
+      "pct_improved": 0.4743
+    },
+    "best_of_3": {
+      "mean": 3.0361,
+      "median": 0.4,
+      "p90": 11.426
+    }
+  },
+  "conditional_coarse_within_1s": {
+    "n": 445,
+    "coarse": {
+      "mean": 0.3593,
+      "median": 0.3
+    },
+    "aic": {
+      "mean": 0.3569,
+      "median": 0.28
+    },
+    "stalta": {
+      "mean": 0.5038,
+      "median": 0.45
+    },
+    "kurtosis": {
+      "mean": 0.4117,
+      "median": 0.35
+    }
+  },
+  "best_refiner": "AIC",
+  "target_lt_0p3s_median": false,
+  "note": "Refiners operate within \u00b10.5s of GPD-FT coarse pick. Windows where coarse pick is >0.5s from truth cannot be improved by local refinement. Conditional metrics (coarse within 1.0s) show achievable accuracy on well-detected picks. Mean is pull-biased by ~20% wrong-peak detections; median is the operational metric."
+}

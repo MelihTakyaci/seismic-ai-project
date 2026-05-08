@@ -1,0 +1,75 @@
+{
+  "phase": "fine-tuning",
+  "test_n_total": 1724,
+  "detection_criterion": "P pick in [origin-5.0s, origin+25.0s]",
+  "pretrained": {
+    "model": "PhaseNet (zero-shot)",
+    "n_event_windows": 1715,
+    "n_noise_windows": 9,
+    "TP": 719,
+    "FN": 996,
+    "FP": 3,
+    "TN": 6,
+    "recall": 0.4192,
+    "precision": 0.9958,
+    "f1": 0.5901,
+    "fp_per_hour": 20.0,
+    "p_pick_mae_s": 5.0266,
+    "n_p_mae_samples": 746,
+    "by_magnitude": {
+      "M 2.0-3.0": {
+        "n": 1397,
+        "TP": 572,
+        "FN": 825,
+        "recall": 0.4094
+      },
+      "M 3.0-4.0": {
+        "n": 271,
+        "TP": 125,
+        "FN": 146,
+        "recall": 0.4613
+      },
+      "M>=4.0": {
+        "n": 47,
+        "TP": 22,
+        "FN": 25,
+        "recall": 0.4681
+      }
+    }
+  },
+  "finetuned": {
+    "model": "PhaseNet (fine-tuned)",
+    "n_event_windows": 1715,
+    "n_noise_windows": 9,
+    "TP": 23,
+    "FN": 1692,
+    "FP": 0,
+    "TN": 9,
+    "recall": 0.0134,
+    "precision": 1.0,
+    "f1": 0.0265,
+    "fp_per_hour": 0.0,
+    "p_pick_mae_s": 3.868,
+    "n_p_mae_samples": 25,
+    "by_magnitude": {
+      "M 2.0-3.0": {
+        "n": 1397,
+        "TP": 13,
+        "FN": 1384,
+        "recall": 0.0093
+      },
+      "M 3.0-4.0": {
+        "n": 271,
+        "TP": 6,
+        "FN": 265,
+        "recall": 0.0221
+      },
+      "M>=4.0": {
+        "n": 47,
+        "TP": 4,
+        "FN": 43,
+        "recall": 0.0851
+      }
+    }
+  }
+}

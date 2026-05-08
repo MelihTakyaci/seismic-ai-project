@@ -1,0 +1,26 @@
+{
+  "phase": "s_phase_improvement",
+  "n_emsc_s_picks_total": 28276,
+  "n_test_with_emsc_s": 163,
+  "n_test_with_taupy_s": 352,
+  "phasenet_fixed_s_mae": {
+    "vs_taupy": {
+      "n": 163,
+      "mean": 5.036,
+      "median": 4.21
+    },
+    "vs_emsc": {
+      "n": 163,
+      "mean": 4.447,
+      "median": 3.22
+    }
+  },
+  "s_optimized_model": {
+    "trained": true,
+    "n_train": 714,
+    "mae_mean": 4.003,
+    "mae_median": 1.74,
+    "target_lt_2s": true
+  },
+  "target_lt_2s_median": true
+}
