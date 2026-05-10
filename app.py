@@ -820,11 +820,13 @@ with st.sidebar:
     )
 
 # ── Sekmeler ────────────────────────────────────────────────────────
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "🗺  Olay Haritası",
     "〰  Dalga Formu Görüntüleyici",
     "🏗  TBDY-2018 Risk Danışmanı",
-    "🔴  Etki Senaryosu",
+    "⚡  Sismik Motor",
+    "📋  Yapısal Risk Raporu",
+    "📡  Canlı İzleme (Demo)",
 ])
 
 # ══════════════════════════════════════════════════════════════════
@@ -852,9 +854,6 @@ with tab1:
         date_end   = st.date_input("Bitiş",     value=cat_df.origin_time.max().date())
         show_sta     = st.checkbox("İstasyonları göster",  value=True)
         show_main    = st.checkbox("M7.8 ana şoku göster", value=True)
-        show_hazard  = st.checkbox("🔴 Sismik Tehlike Katmanı (OSTA)", value=False,
-                                   help="Olasılıksal Sismik Tehlike Analizi — P(M≥6, 50 yıl) "
-                                        "— Deprem tahmini değildir")
 
         st.markdown("---")
         st.markdown("**Faz 5 sıfır-atış recall değerleri**")
@@ -949,69 +948,6 @@ with tab1:
                 textfont=dict(size=11, color="#ffd700"),
                 name="M7.8 ana şok",
             ))
-
-        # ── OSTA Tehlike Katmanı ─────────────────────────────────────────
-        if show_hazard:
-            # Use v2 calibrated grid (3-zone ISC 1990-2023) if available, else v1
-            _hgrid_v2 = ROOT / "artifacts" / "spatial_hazard_grid_v2.csv"
-            _hgrid_v1 = ROOT / "artifacts" / "spatial_hazard_grid.csv"
-            _hgrid_path = _hgrid_v2 if _hgrid_v2.exists() else _hgrid_v1
-            _grid_ver   = "v2 (ISC 1990-2023)" if _hgrid_v2.exists() else "v1"
-            if _hgrid_path.exists():
-                _hg = pd.read_csv(_hgrid_path)
-                # v2 grid already has Omori-corrected lambda_M6; v1 needs 50× correction
-                if "P50yr_M6" in _hg.columns:
-                    # v2: use P50yr_M6 directly (already background-corrected)
-                    _hg["P50_M6_bg"] = _hg["P50yr_M6"]
-                else:
-                    _OMORI = 50.0
-                    _hg["lambda_M6_bg"] = _hg["lambda_M6"] / _OMORI
-                    _hg["P50_M6_bg"]    = 1 - np.exp(-_hg["lambda_M6_bg"] * 50)
-                # Classify into hazard tiers for labeling
-                def _htier(p):
-                    if p < 0.20:  return "Düşük (<20%)"
-                    if p < 0.50:  return "Orta (20-50%)"
-                    if p < 0.80:  return "Yüksek (50-80%)"
-                    return "Çok Yüksek (>80%)"
-                _hg["tehlike_turu"] = _hg["P50_M6_bg"].apply(_htier)
-                _hg["label"] = (
-                    "P(M≥6,50yr)=" + (_hg["P50_M6_bg"] * 100).round(1).astype(str) + "%"
-                    + "<br>b=" + _hg["b_value"].round(3).astype(str)
-                    + "<br>N=" + _hg["n_events"].astype(str)
-                )
-                _tier_color = {
-                    "Düşük (<20%)":       "#00c853",
-                    "Orta (20-50%)":      "#ffd600",
-                    "Yüksek (50-80%)":    "#ff9800",
-                    "Çok Yüksek (>80%)":  "#ef5350",
-                }
-                for _tier, _tc in _tier_color.items():
-                    _sub_h = _hg[_hg["tehlike_turu"] == _tier]
-                    if len(_sub_h) == 0:
-                        continue
-                    fig.add_trace(go.Scattermapbox(
-                        lat=_sub_h["lat_center"].tolist(),
-                        lon=_sub_h["lon_center"].tolist(),
-                        mode="markers",
-                        marker=dict(size=18, color=_tc, opacity=0.45),
-                        customdata=_sub_h[["P50_M6_bg", "b_value", "n_events"]].values,
-                        hovertemplate=(
-                            "<b>OSTA Tehlike Hücresi</b><br>"
-                            "P(M≥6, 50yr): %{customdata[0]:.1%}<br>"
-                            "b-değeri: %{customdata[1]:.3f}<br>"
-                            "N olay: %{customdata[2]}<br>"
-                            "<i>Uzun vadeli istatistik — deprem tahmini değildir</i>"
-                            "<extra></extra>"
-                        ),
-                        name=f"OSTA: {_tier}",
-                    ))
-                fig.add_annotation(
-                    text="🔴 OSTA Katmanı: P(M≥6,50yr) — Uzun vadeli istatistik",
-                    xref="paper", yref="paper", x=0.01, y=0.01,
-                    font=dict(color="#ff9800", size=9),
-                    showarrow=False, bgcolor="rgba(15,21,37,0.7)",
-                    bordercolor="#ff9800", borderwidth=1,
-                )
 
         fig.update_layout(
             height=560,
@@ -1769,7 +1705,7 @@ with tab3:
         "LLM kullanılmaz — deterministik ve doğrulanabilir çıktı."
     )
 
-    # Import risk + hazard modules
+    # Import risk module
     import sys as _sys
     _sys.path.insert(0, str(ROOT / "scripts"))
     try:
@@ -1779,11 +1715,6 @@ with tab3:
     except Exception as _e:
         _risk_ok = False
         st.error(f"Risk modülü yüklenemedi: {_e}")
-    try:
-        _haz = _im("43_hazard_calculator")
-        _haz_ok = True
-    except Exception as _e2:
-        _haz_ok = False
 
     # Enhancement B: Turkey DTS Map
     with st.expander("🗺 Türkiye Batı Bölgesi — Deprem Tasarım Sınıfı (DTS) Haritası", expanded=False):
@@ -1896,117 +1827,6 @@ with tab3:
                     unsafe_allow_html=True,
                 )
 
-                # ── OSTA: Sismik Tehlike Analizi ─────────────────────
-                st.markdown("#### 📊 Sismik Tehlike Analizi (OSTA)")
-                st.caption(
-                    "Poisson istatistiğine dayalı uzun vadeli sismik tehlike tahmini. "
-                    "Kısa vadeli deprem tahmini değildir. "
-                    "v2 kalibrasyon: ISC 1990–2023 (46,254 olay), 3 bölge (KAF/DAF/OA), "
-                    "2023 artçı şok dönemi hariç (2023-02-06 – 2023-08-06)."
-                )
-                if _haz_ok:
-                    _h5  = _haz.get_hazard_probability(_lat, _lon, 5.0, 50)
-                    _h6  = _haz.get_hazard_probability(_lat, _lon, 6.0, 50)
-                    _h7  = _haz.get_hazard_probability(_lat, _lon, 7.0, 50)
-                    _hcl = _haz.classify_hazard_level(_h5["probability"])
-                    _hcl7 = _haz.classify_hazard_level(_h7["probability"])
-
-                    _hc1, _hc2, _hc3 = st.columns(3)
-                    with _hc1:
-                        st.markdown(
-                            f'<div style="background:{_hcl["color"]}22;'
-                            f'border:1.5px solid {_hcl["color"]}66;'
-                            f'border-radius:9px;padding:12px 14px;text-align:center">'
-                            f'<div style="font-size:0.72rem;color:rgba(232,236,240,0.6);'
-                            f'text-transform:uppercase;letter-spacing:1px">50 Yılda M≥5.0</div>'
-                            f'<div style="font-size:1.6rem;font-weight:700;'
-                            f'color:{_hcl["color"]}">{_h5["probability_pct"]:.0f}%</div>'
-                            f'<div style="font-size:0.68rem;color:rgba(232,236,240,0.5)">'
-                            f'T={_h5["return_period_yr"]:.0f} yıl</div>'
-                            f'</div>',
-                            unsafe_allow_html=True,
-                        )
-                    with _hc2:
-                        st.markdown(
-                            f'<div style="background:#ff980022;border:1.5px solid #ff980066;'
-                            f'border-radius:9px;padding:12px 14px;text-align:center">'
-                            f'<div style="font-size:0.72rem;color:rgba(232,236,240,0.6);'
-                            f'text-transform:uppercase;letter-spacing:1px">50 Yılda M≥6.0</div>'
-                            f'<div style="font-size:1.6rem;font-weight:700;color:#ff9800">'
-                            f'{_h6["probability_pct"]:.0f}%</div>'
-                            f'<div style="font-size:0.68rem;color:rgba(232,236,240,0.5)">'
-                            f'T={_h6["return_period_yr"]:.0f} yıl</div>'
-                            f'</div>',
-                            unsafe_allow_html=True,
-                        )
-                    with _hc3:
-                        st.markdown(
-                            f'<div style="background:{_hcl7["color"]}22;'
-                            f'border:1.5px solid {_hcl7["color"]}66;'
-                            f'border-radius:9px;padding:12px 14px;text-align:center">'
-                            f'<div style="font-size:0.72rem;color:rgba(232,236,240,0.6);'
-                            f'text-transform:uppercase;letter-spacing:1px">50 Yılda M≥7.0</div>'
-                            f'<div style="font-size:1.6rem;font-weight:700;'
-                            f'color:{_hcl7["color"]}">{_h7["probability_pct"]:.0f}%</div>'
-                            f'<div style="font-size:0.68rem;color:rgba(232,236,240,0.5)">'
-                            f'T={_h7["return_period_yr"]:.0f} yıl</div>'
-                            f'</div>',
-                            unsafe_allow_html=True,
-                        )
-
-                    # G-R curve mini-plot
-                    with st.expander("📈 Gutenberg-Richter Eğrisi — Bu Konum için", expanded=False):
-                        _gr_curve = _haz.get_gr_curve(_lat, _lon)
-                        _gr_m   = _gr_curve["magnitude"]
-                        _gr_lam = _gr_curve["annual_rate"]
-                        _gr_fig = go.Figure()
-                        _gr_fig.add_trace(go.Scatter(
-                            x=_gr_m, y=_gr_lam,
-                            mode="lines", name=f"G-R (b={_gr_curve['b_value']:.3f})",
-                            line=dict(color="#ff6b35", width=2),
-                        ))
-                        # Poisson probability right axis: overlay as annotation boxes
-                        for _m_mark, _m_color in [(5.0,"#00d4ff"), (6.0,"#ff9800"), (7.0,"#ef5350")]:
-                            _lam_mark = _gr_curve["annual_rate"][
-                                min(range(len(_gr_m)), key=lambda _i: abs(_gr_m[_i]-_m_mark))
-                            ]
-                            _gr_fig.add_vline(
-                                x=_m_mark, line_dash="dot", line_color=_m_color, line_width=1.5,
-                                annotation_text=f"M{_m_mark:.0f}",
-                                annotation_font_color=_m_color, annotation_font_size=9,
-                            )
-                        _gr_fig.update_layout(
-                            height=240, margin=dict(l=50, r=20, t=20, b=40),
-                            paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(15,21,37,0.85)",
-                            font=dict(color="#e8ecf0", family="DM Sans"),
-                            xaxis=dict(title=dict(text="Magnitüd", font=dict(size=10)),
-                                       gridcolor="rgba(0,212,255,0.08)", zeroline=False,
-                                       tickfont=dict(color="rgba(232,236,240,0.5)", size=9)),
-                            yaxis=dict(title=dict(text="Yıllık oran λ(≥M)", font=dict(size=10)),
-                                       type="log", gridcolor="rgba(0,212,255,0.08)",
-                                       zeroline=False,
-                                       tickfont=dict(color="rgba(232,236,240,0.5)", size=9)),
-                            legend=dict(font=dict(size=9, color="#e8ecf0"),
-                                       bgcolor="rgba(15,21,37,0.7)"),
-                        )
-                        st.plotly_chart(_gr_fig, use_container_width=True)
-                        st.caption(
-                            f"Bölge: {_h5['region']}  |  b-değeri: {_gr_curve['b_value']:.3f}  |  "
-                            f"Kaynak: {_h5['source']}"
-                        )
-
-                    st.markdown(
-                        '<p style="font-size:0.7rem;color:rgba(232,236,240,0.45);'
-                        'margin-top:4px">⚠ Bu değerler Poisson istatistiğine dayalı uzun vadeli '
-                        'sismik tehlike tahminidir. Kısa vadeli deprem tahmini değildir. '
-                        'Kaynak: ISC 1990–2023 (46,254 olay), 3-bölge kalibrasyon (KAF/DAF/OA).</p>',
-                        unsafe_allow_html=True,
-                    )
-                    st.markdown("---")
-                else:
-                    st.info("OSTA modülü yüklenemedi — `scripts/43_hazard_calculator.py` kontrolü yapın.")
-                    st.markdown("---")
-
                 # ── Zemin ve DTS kartları ────────────────────────────
                 _c1, _c2, _c3 = st.columns(3)
                 with _c1:
@@ -2068,399 +1888,778 @@ with tab3:
                 )
 
 # ══════════════════════════════════════════════════════════════════
-# SEKME 4 — Deprem Etki Senaryosu (Hipotetik Senaryo Simülasyonu)
+# SEKME 4 — Sismik Motor (Üretim Hattı)
 # ══════════════════════════════════════════════════════════════════
 with tab4:
-    # ── Load impact calculator ────────────────────────────────────────────────
-    try:
-        import importlib.util as _ilu
-        _spec47 = _ilu.spec_from_file_location(
-            "impact_calc",
-            ROOT / "scripts" / "47_impact_calculator.py"
-        )
-        _ic = _ilu.module_from_spec(_spec47)
-        _spec47.loader.exec_module(_ic)
-        _impact_ok = True
-    except Exception as _ie:
-        _impact_ok = False
-        _impact_err = str(_ie)
-
-    st.markdown("""
-    <div style='background:linear-gradient(90deg,#7f0000,#c0392b);
-                padding:12px 18px;border-radius:8px;margin-bottom:12px'>
-      <span style='font-size:1.25rem;font-weight:700;color:white'>
-        🔴 Deprem Etki Senaryosu — Hipotetik Senaryo Simülasyonu
-      </span>
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.warning(
-        "⚠️ **Bu araç olası etki tahmini üretir. Kesin tahmin değildir.**  \n"
-        "FEMA HAZUS metodolojisi temel alınmıştır. 1999 Kocaeli (M7.6) ve 2023 "
-        "Kahramanmaraş (M7.8) gerçek hasar verileriyle kalibre edilmiştir.  \n"
-        "**Tahminler il düzeyi ortalamadır; ilçe/bina düzeyi hassasiyetinde değildir.**"
+    st.subheader("Sismik Motor — Hibrit Trace-Level Sınıflandırıcı")
+    st.caption(
+        "GPD gömülü → 805-boyutlu özellik → PCA(100) → SVM RBF(C=20) → Olay/Gürültü kararı  ·  "
+        "Eşik: 0.440 (oracle @ %90 TNR)  ·  Phase 3.9"
     )
 
-    if not _impact_ok:
-        st.error(f"İmpact hesaplayıcı yüklenemedi: {_impact_err}")
-        st.stop()
+    import h5py as _h5py
+    from datetime import datetime as _dt
 
-    # ── Layout: left controls | right results ─────────────────────────────────
-    _col_ctrl, _col_res = st.columns([1, 2], gap="large")
+    @st.cache_resource
+    def load_trace_classifier():
+        from seismic_engine.models.gpd_embedder import GPDEmbedder
+        from seismic_engine.inference.trace_classifier import TraceClassifier
+        from seismic_engine.config import GPDConfig
+        _model_path = ROOT / "models" / "trace_classifier.joblib"
+        if not _model_path.exists():
+            return None
+        embedder = GPDEmbedder(device="cpu")
+        clf = TraceClassifier(embedder, cfg=GPDConfig(), svm_C=20.0, n_pca=100)
+        clf.load(_model_path)
+        return clf
 
-    with _col_ctrl:
-        st.markdown("#### 📍 Deprem Senaryosu Tanımla")
+    @st.cache_data
+    def load_hdf5_trace_list():
+        meta = pd.read_csv(ROOT / "data" / "augmented_dataset" / "metadata.csv")
+        orig = meta[meta["augmentation"] == "original"].copy()
+        orig["label"] = orig["window_type"].map({"event": "event", "noise": "noise"}).fillna("noise")
+        return orig
 
-        # Preset buttons
-        st.markdown("**Hazır Senaryolar:**")
-        _p1, _p2, _p3 = st.columns(3)
-        _preset_key = st.session_state.get("impact_preset", None)
-        with _p1:
-            if st.button("🔁 1999\nKocaeli", use_container_width=True):
-                st.session_state["impact_preset"]  = "kocaeli_1999"
-                st.session_state["impact_lat"]     = 40.76
-                st.session_state["impact_lon"]     = 29.97
-                st.session_state["impact_mag"]     = 7.6
-                st.session_state["impact_depth"]   = 17
-                st.session_state["impact_time"]    = "Gece (02:00)"
-                st.rerun()
-        with _p2:
-            if st.button("🏙️ Marmara\nM7.2", use_container_width=True):
-                st.session_state["impact_preset"]  = "marmara_m72"
-                st.session_state["impact_lat"]     = 40.80
-                st.session_state["impact_lon"]     = 28.50
-                st.session_state["impact_mag"]     = 7.2
-                st.session_state["impact_depth"]   = 12
-                st.session_state["impact_time"]    = "Gece (02:00)"
-                st.rerun()
-        with _p3:
-            if st.button("🌊 İzmir\nM6.9", use_container_width=True):
-                st.session_state["impact_preset"]  = "izmir_m69"
-                st.session_state["impact_lat"]     = 38.35
-                st.session_state["impact_lon"]     = 26.79
-                st.session_state["impact_mag"]     = 6.9
-                st.session_state["impact_depth"]   = 10
-                st.session_state["impact_time"]    = "Gündüz (14:00)"
-                st.rerun()
+    _trace_meta = load_hdf5_trace_list()
+    _events_meta = _trace_meta[_trace_meta["window_type"] == "event"].sort_values(
+        "source_magnitude", ascending=False
+    )
+    _noise_meta = _trace_meta[_trace_meta["window_type"] == "noise"]
 
-        st.markdown("---")
+    _eng_col_ctrl, _eng_col_main = st.columns([1, 3])
 
-        # Manual inputs
-        _sc_lat = st.number_input(
-            "Merkez Üssü Enlemi (°N)",
-            min_value=36.0, max_value=42.5, step=0.01,
-            value=float(st.session_state.get("impact_lat", 40.76)),
-            key="impact_lat_inp",
-        )
-        _sc_lon = st.number_input(
-            "Merkez Üssü Boylamı (°E)",
-            min_value=26.0, max_value=44.5, step=0.01,
-            value=float(st.session_state.get("impact_lon", 29.97)),
-            key="impact_lon_inp",
-        )
-        _sc_mag = st.slider(
-            "Büyüklük (Mw)", min_value=5.0, max_value=8.0, step=0.1,
-            value=float(st.session_state.get("impact_mag", 7.2)),
-            key="impact_mag_sl",
-        )
-        _dep_options = [5, 10, 15, 20, 25, 30]
-        _dep_raw = int(st.session_state.get("impact_depth", 15))
-        _dep_val = min(_dep_options, key=lambda x: abs(x - _dep_raw))
-        _sc_dep = st.select_slider(
-            "Odak Derinliği (km)", options=_dep_options,
-            value=_dep_val,
-            key="impact_dep_sl",
-        )
-        _sc_time_lbl = st.radio(
-            "Zaman", ["Gece (02:00)", "Gündüz (14:00)"],
-            index=0 if st.session_state.get("impact_time","Gece")=="Gece (02:00)" else 1,
-            key="impact_time_r",
+    with _eng_col_ctrl:
+        st.markdown("**Veri Kaynağı**")
+        _eng_source = st.radio(
+            "Kaynak seçin",
+            ["Test Seti (HDF5)", "MiniSEED Yükle"],
             horizontal=True,
+            label_visibility="collapsed",
         )
-        _sc_time = "night" if "Gece" in _sc_time_lbl else "day"
+
+        if _eng_source == "Test Seti (HDF5)":
+            _eng_wtype = st.selectbox("Pencere türü", ["Olay (event)", "Gürültü (noise)"])
+            if "Olay" in _eng_wtype:
+                _eng_candidates = _events_meta
+                _eng_labels = [
+                    f"M{row.source_magnitude:.1f} | {row.station} | {row.trace_name[:50]}"
+                    for _, row in _eng_candidates.iterrows()
+                ]
+            else:
+                _eng_candidates = _noise_meta.head(100)
+                _eng_labels = [
+                    f"{row.station} | {row.trace_name[:55]}"
+                    for _, row in _eng_candidates.iterrows()
+                ]
+            _eng_sel_idx = st.selectbox(
+                "Pencere seçin",
+                range(len(_eng_labels)),
+                format_func=lambda i: _eng_labels[i],
+            )
+            _eng_sel_row = _eng_candidates.iloc[_eng_sel_idx]
+            _eng_trace_name = _eng_sel_row["trace_name"]
+
+            st.markdown("---")
+            st.markdown(
+                f'<div class="metric-card">'
+                f'<b style="color:#00d4ff">Trace:</b> {_eng_trace_name[:40]}<br>'
+                f'<b style="color:#00d4ff">İstasyon:</b> {_eng_sel_row["station"]}<br>'
+                f'<b style="color:#00d4ff">Magnitüd:</b> M{_eng_sel_row.get("source_magnitude", 0):.1f}<br>'
+                f'<b style="color:#00d4ff">Tür:</b> {_eng_sel_row["window_type"]}'
+                f'</div>',
+                unsafe_allow_html=True,
+            )
+        else:
+            _eng_uploaded = st.file_uploader(
+                "MiniSEED dosyası yükleyin (.mseed)",
+                type=["mseed"],
+                help="3-bileşenli (HHZ/HHN/HHE), 100 Hz, 60 saniyelik pencere",
+            )
+
+        _eng_run = st.button("⚡ Çıkarım Yap", type="primary", use_container_width=True)
+
+    with _eng_col_main:
+        if _eng_run:
+            _eng_data = None
+            _eng_info = {}
+
+            if _eng_source == "Test Seti (HDF5)":
+                with st.spinner("HDF5'ten trace yükleniyor..."):
+                    hdf5_path = ROOT / "data" / "augmented_dataset" / "waveforms.hdf5"
+                    with _h5py.File(str(hdf5_path), "r") as hf:
+                        _eng_data = hf["data"][_eng_trace_name][:]
+                    _eng_info = {
+                        "station": _eng_sel_row["station"],
+                        "magnitude": _eng_sel_row.get("source_magnitude", None),
+                        "window_type": _eng_sel_row["window_type"],
+                        "trace_name": _eng_trace_name,
+                    }
+            else:
+                if _eng_uploaded is not None:
+                    with st.spinner("MiniSEED okunuyor..."):
+                        from obspy import read as _obspy_read
+                        try:
+                            _mseed_st = _obspy_read(_eng_uploaded)
+                        except Exception as _mseed_err:
+                            st.error(f"MiniSEED dosyası okunamadı: {_mseed_err}")
+                            st.stop()
+                        if len(_mseed_st) < 3:
+                            st.error("MiniSEED dosyası 3 bileşen (Z/N/E) içermelidir.")
+                            st.stop()
+                        _orig_sr = _mseed_st[0].stats.sampling_rate
+                        _mseed_st.detrend("demean").filter("bandpass", freqmin=1.0, freqmax=45.0)
+                        if _orig_sr != 100.0:
+                            st.warning(f"Örnekleme hızı {_orig_sr} Hz → 100 Hz'e yeniden örneklendi.")
+                        _mseed_st.resample(100.0)
+                        _n_target = 6000
+                        channels = []
+                        for tr in sorted(_mseed_st, key=lambda t: t.stats.channel):
+                            d = tr.data[:_n_target].astype(np.float32)
+                            if len(d) < _n_target:
+                                d = np.pad(d, (0, _n_target - len(d)))
+                            channels.append(d)
+                        _eng_data = np.array(channels[:3])
+                        _eng_info = {
+                            "station": f"{_mseed_st[0].stats.network}.{_mseed_st[0].stats.station}",
+                            "magnitude": None,
+                            "window_type": "upload",
+                            "trace_name": _eng_uploaded.name,
+                        }
+                else:
+                    st.warning("Lütfen bir MiniSEED dosyası yükleyin.")
+
+            if _eng_data is not None:
+                with st.spinner("Hibrit sınıflandırıcı çalıştırılıyor (GPD → SVM)..."):
+                    _clf = load_trace_classifier()
+                    if _clf is None:
+                        st.error("Model dosyası bulunamadı: `models/trace_classifier.joblib`")
+                        st.stop()
+                    _eng_result = _clf.predict(_eng_data, station=_eng_info.get("station"))
+
+                _is_event = _eng_result["is_event"]
+                _event_prob = _eng_result["trace_event_prob"]
+                _p_prob = _eng_result["p_prob"]
+                _gpd_max = _eng_result["gpd_max_prob"]
+                _n_win = _eng_result["n_total_windows"]
+
+                st.session_state["engine_result"] = _eng_result
+                st.session_state["engine_info"] = _eng_info
+                st.session_state["engine_data"] = _eng_data
+
+                _verdict_color = "#00c853" if _is_event else "#ef5350"
+                _verdict_text = "OLAY TESPİT EDİLDİ" if _is_event else "GÜRÜLTÜ"
+                _verdict_icon = "✅" if _is_event else "❌"
+
+                st.markdown(
+                    f'<div style="background:{_verdict_color}22;border:2px solid {_verdict_color};'
+                    f'border-radius:10px;padding:14px 18px;margin-bottom:14px">'
+                    f'<span style="font-size:1.3rem;font-weight:700;color:{_verdict_color}">'
+                    f'{_verdict_icon} {_verdict_text}</span>'
+                    f'<span style="margin-left:24px;font-size:0.9rem;color:rgba(232,236,240,0.7)">'
+                    f'SVM Olasılık: {_event_prob:.3f}  |  Eşik: 0.440  |  '
+                    f'GPD Maks: {_gpd_max:.3f}  |  Pencere: {_n_win}'
+                    f'</span></div>',
+                    unsafe_allow_html=True,
+                )
+
+                _mc1, _mc2, _mc3, _mc4 = st.columns(4)
+                with _mc1:
+                    st.metric("SVM Olay Olasılığı", f"{_event_prob:.3f}")
+                with _mc2:
+                    st.metric("GPD Maks P-Prob", f"{_gpd_max:.3f}")
+                with _mc3:
+                    st.metric("Pencere Sayısı", f"{_n_win}")
+                with _mc4:
+                    _p_peak_idx = int(np.argmax(_p_prob)) if _is_event else 0
+                    _p_peak_s = _p_peak_idx / 100.0
+                    st.metric("P-Pick (s)", f"{_p_peak_s:.2f}" if _is_event else "—")
+
+                _t_eng = np.arange(_eng_data.shape[1]) / 100.0
+                _fig_eng = go.Figure()
+                for ch_i, (ch, off) in enumerate(zip(["HHZ", "HHN", "HHE"], [2, 1, 0])):
+                    _fig_eng.add_trace(go.Scatter(
+                        x=_t_eng, y=_eng_data[ch_i] + off * 3,
+                        name=ch,
+                        line=dict(width=0.9, color=["#00d4ff", "#7b8cde", "rgba(255,107,53,0.75)"][ch_i]),
+                    ))
+
+                if _is_event:
+                    _p_prob_norm = _p_prob / max(_p_prob.max(), 1e-9) * 2 - 1
+                    _fig_eng.add_trace(go.Scatter(
+                        x=_t_eng, y=_p_prob_norm - 3,
+                        name="P-Probability",
+                        line=dict(width=1.5, color="#00ff88"),
+                        fill="tozeroy",
+                        fillcolor="rgba(0,255,136,0.1)",
+                    ))
+
+                    _p_pick_t = _p_peak_s
+                    _fig_eng.add_vline(
+                        x=_p_pick_t, line_width=2, line_dash="dash",
+                        line_color="#00d4ff",
+                        annotation_text=f"P-Pick {_p_pick_t:.2f}s ({_p_prob.max():.2f})",
+                        annotation_position="top right",
+                        annotation_font_size=10,
+                        annotation_font_color="#00d4ff",
+                    )
+
+                _title_parts = [f"<b>{_eng_info.get('station','')}</b>"]
+                if _eng_info.get("magnitude"):
+                    _title_parts.append(f"M{_eng_info['magnitude']:.1f}")
+                _title_parts.append(
+                    f"<span style='color:{_verdict_color}'>[{_verdict_text}]</span>"
+                )
+
+                _fig_eng.update_layout(
+                    height=430,
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    plot_bgcolor="rgba(15,21,37,0.85)",
+                    title=dict(
+                        text="  ".join(_title_parts),
+                        font=dict(color="#e8ecf0", size=13, family="DM Sans"),
+                    ),
+                    xaxis=dict(
+                        title="Zaman (s)",
+                        gridcolor="rgba(0,212,255,0.08)", zeroline=False,
+                        tickfont=dict(color="rgba(232,236,240,0.5)", family="Space Mono", size=9),
+                    ),
+                    yaxis=dict(
+                        showticklabels=False,
+                        gridcolor="rgba(0,212,255,0.06)", zeroline=False,
+                    ),
+                    legend=dict(
+                        orientation="h", y=1.12,
+                        bgcolor="rgba(15,21,37,0.7)",
+                        font=dict(color="#e8ecf0", size=10),
+                    ),
+                    margin=dict(l=50, r=20, t=70, b=45),
+                    font=dict(color="#e8ecf0", family="DM Sans"),
+                )
+                st.plotly_chart(_fig_eng, use_container_width=True)
+
+                st.progress(
+                    min(1.0, float(_event_prob)),
+                    text=(
+                        f"SVM Olay Olasılığı: {_event_prob:.1%} — "
+                        + ("Güçlü tespit" if _event_prob > 0.65
+                           else "Orta sinyal" if _event_prob > 0.35
+                           else "Zayıf / Gürültü")
+                    ),
+                )
+                st.caption(
+                    "Hibrit Sınıflandırıcı: GPD gömülü (bn5 katmanı, 200-dim) → "
+                    "stride=200 kayan pencere → 805-dim trace özellik vektörü → "
+                    "StandardScaler → PCA(100) → SVM RBF(C=20) → Platt ölçekleme → "
+                    "Olay/Gürültü kararı (eşik=0.440, oracle @ %90 TNR)"
+                )
+
+        elif st.session_state.get("engine_result"):
+            st.info("Son çıkarım sonucu mevcut. Yeni çıkarım için sol paneldeki butona tıklayın.")
+        else:
+            st.info("👈 Sol panelden bir trace seçin veya MiniSEED yükleyin, ardından **⚡ Çıkarım Yap** butonuna tıklayın.")
+
+# ══════════════════════════════════════════════════════════════════
+# SEKME 5 — Yapısal Risk Raporu (Yerel LLM Entegrasyonu)
+# ══════════════════════════════════════════════════════════════════
+with tab5:
+    st.subheader("Yapısal Risk Raporu — Yerel DeepSeek LLM + TBDY-2018 RAG")
+
+    from risk_advisor.llm_client import is_ollama_reachable as _is_ollama, OLLAMA_MODEL as _OLLAMA_MODEL
+    _api_ok = _is_ollama()
+    if _api_ok:
+        _mode_label = f"Yerel DeepSeek Motor Bağlı ({_OLLAMA_MODEL})"
+        _mode_color = "#00c853"
+        _mode_icon = "🟢"
+    else:
+        _mode_label = "Ollama Sunucusu Çevrimdışı"
+        _mode_color = "#ef5350"
+        _mode_icon = "🔴"
+    st.markdown(
+        f'<div style="display:inline-block;background:{_mode_color}22;'
+        f'border:1px solid {_mode_color}66;border-radius:6px;padding:4px 12px;'
+        f'font-size:0.78rem;color:{_mode_color};font-weight:600;margin-bottom:12px">'
+        f'{_mode_icon} {_mode_label}</div>',
+        unsafe_allow_html=True,
+    )
+    if not _api_ok:
+        st.warning(
+            "Ollama sunucusu erişilemez. Terminalde `ollama serve` komutunu çalıştırın, "
+            f"ardından `ollama pull {_OLLAMA_MODEL}` ile modeli indirin. "
+            "Şu an mock mod aktif — deterministik şablon rapor üretilecektir."
+        )
+
+    _rpt_col_ctrl, _rpt_col_main = st.columns([1, 3])
+
+    with _rpt_col_ctrl:
+        st.markdown("**Rapor Tetikleme**")
+
+        _has_detection = (
+            st.session_state.get("engine_result", {}).get("is_event", False)
+        )
+        if _has_detection:
+            _det_info = st.session_state.get("engine_info", {})
+            st.success(
+                f"Tespit: {_det_info.get('station', '?')} — "
+                f"M{_det_info.get('magnitude', '?')}"
+            )
+        else:
+            st.info("Sekme 5'te olay tespit edilirse otomatik tetiklenir.")
+
+        _rpt_language = st.radio("Rapor dili", ["Türkçe (tr)", "English (en)"], horizontal=True)
+        _rpt_lang_code = "tr" if "tr" in _rpt_language else "en"
 
         st.markdown("---")
-        _run_btn = st.button(
-            "🔴 Senaryoyu Simüle Et",
-            use_container_width=True,
+        _rpt_generate = st.button(
+            "📋 Risk Raporu Oluştur",
             type="primary",
+            use_container_width=True,
+            disabled=not _has_detection,
         )
 
-        # Persistent disclaimer
+        if not _has_detection:
+            st.caption("Rapor oluşturmak için önce Sekme 5'te çıkarım yapın.")
+
+    with _rpt_col_main:
+        if _rpt_generate and _has_detection:
+            _det_result = st.session_state["engine_result"]
+            _det_info = st.session_state["engine_info"]
+
+            from risk_advisor.schema import (
+                EnginePayload, DetectedEvent, DetectionTierResult,
+            )
+            from risk_advisor.report_generator import ReportGenerator
+
+            _p_peak_idx = int(np.argmax(_det_result["p_prob"]))
+            _p_peak_s = _p_peak_idx / 100.0
+
+            _payload = EnginePayload(
+                timestamp=_dt.utcnow(),
+                pipeline_version="1.0.0-phase4",
+                region="marmara",
+                detected_events=[
+                    DetectedEvent(
+                        trace_id=_det_info.get("trace_name", "unknown"),
+                        magnitude=_det_info.get("magnitude"),
+                        model_name="hybrid_gpd_svm",
+                        p_probability_peak=float(_det_result["gpd_max_prob"]),
+                        p_pick_seconds=_p_peak_s,
+                        tier_results=[
+                            DetectionTierResult(
+                                tier="trace_classification",
+                                detected=True,
+                                confidence=float(_det_result["trace_event_prob"]),
+                            ),
+                            DetectionTierResult(
+                                tier="phase_picking",
+                                detected=True,
+                                mae_seconds=None,
+                                confidence=float(_det_result["p_prob"].max()),
+                                pick_sample=_p_peak_idx,
+                            ),
+                        ],
+                    )
+                ],
+                scorecard={
+                    "svm_event_prob": float(_det_result["trace_event_prob"]),
+                    "gpd_max_p_prob": float(_det_result["gpd_max_prob"]),
+                    "p_pick_seconds": _p_peak_s,
+                    "n_windows": _det_result["n_total_windows"],
+                    "detection_threshold": 0.440,
+                    "model": "Phase 3.9 — event-station focused SVM RBF(C=20)",
+                },
+            )
+
+            @st.cache_resource
+            def get_report_generator():
+                return ReportGenerator()
+
+            _rgen = get_report_generator()
+
+            st.markdown("### Risk Raporu")
+            st.markdown("---")
+
+            _report_container = st.empty()
+            _full_report_text = ""
+
+            with st.spinner(f"DeepSeek ({_OLLAMA_MODEL}) rapor üretiyor..." if _api_ok else "Mock rapor üretiliyor..."):
+                _stream_chunks = _rgen.stream_report(_payload, language=_rpt_lang_code)
+                _full_report_text = ""
+                for chunk in _stream_chunks:
+                    _full_report_text += chunk
+                    _report_container.markdown(_full_report_text)
+
+            st.markdown("---")
+
+            _dl_col1, _dl_col2 = st.columns(2)
+            with _dl_col1:
+                _report_md = (
+                    f"# Sismik Risk Raporu\n\n"
+                    f"**Tarih:** {_dt.utcnow().strftime('%Y-%m-%d %H:%M UTC')}\n"
+                    f"**İstasyon:** {_det_info.get('station', '?')}\n"
+                    f"**Magnitüd:** M{_det_info.get('magnitude', '?')}\n"
+                    f"**SVM Olasılık:** {_det_result['trace_event_prob']:.3f}\n"
+                    f"**P-Pick:** {_p_peak_s:.2f}s\n\n"
+                    f"---\n\n{_full_report_text}\n\n---\n\n"
+                    f"*Rapor: {'Yerel Ollama (' + _OLLAMA_MODEL + ')' if _api_ok else 'Mock LLM'} | "
+                    f"Pipeline: Phase 3.9 Hybrid Classifier*\n"
+                )
+                st.download_button(
+                    "📥 Raporu İndir (Markdown)",
+                    data=_report_md,
+                    file_name=f"risk_report_{_dt.utcnow().strftime('%Y%m%d_%H%M%S')}.md",
+                    mime="text/markdown",
+                    use_container_width=True,
+                )
+            with _dl_col2:
+                _report_json = json.dumps({
+                    "timestamp": _dt.utcnow().isoformat(),
+                    "station": _det_info.get("station"),
+                    "magnitude": _det_info.get("magnitude"),
+                    "svm_event_prob": _det_result["trace_event_prob"],
+                    "p_pick_seconds": _p_peak_s,
+                    "llm_mode": f"ollama/{_OLLAMA_MODEL}" if _api_ok else "mock",
+                    "report_text": _full_report_text,
+                }, indent=2, ensure_ascii=False)
+                st.download_button(
+                    "📥 Raporu İndir (JSON)",
+                    data=_report_json,
+                    file_name=f"risk_report_{_dt.utcnow().strftime('%Y%m%d_%H%M%S')}.json",
+                    mime="application/json",
+                    use_container_width=True,
+                )
+
+            st.caption(
+                f"LLM: {'Yerel Ollama ' + _OLLAMA_MODEL + ' (hava boşluklu)' if _api_ok else 'Deterministik mock şablon'}  ·  "
+                "RAG: FAISS + sentence-transformers all-MiniLM-L6-v2  ·  "
+                "Pipeline: GPD → SVM RBF → EnginePayload → PromptBuilder → LLM → RiskReport"
+            )
+
+        elif st.session_state.get("engine_result", {}).get("is_event"):
+            st.info("👈 **📋 Risk Raporu Oluştur** butonuna tıklayarak LLM raporunu başlatın.")
+        else:
+            st.info(
+                "Bu sekmede otomatik risk raporu oluşturulur:\n\n"
+                "1. **Sekme 5** (Sismik Motor) sekmesinde bir trace seçin ve çıkarım yapın\n"
+                "2. Olay tespit edilirse bu sekmeye dönün\n"
+                "3. **📋 Risk Raporu Oluştur** butonuna tıklayın\n\n"
+                "Rapor, tespit sonuçlarını TBDY-2018 RAG verileriyle birleştirerek "
+                "yerel DeepSeek LLM (Ollama) tarafından üretilir."
+            )
+
+# ══════════════════════════════════════════════════════════════════
+# SEKME 6 — Canlı İzleme (Demo Modu)
+# ══════════════════════════════════════════════════════════════════
+with tab6:
+    st.subheader("Gerçek Zamanlı Sismik İzleme — Demo Modu")
+    st.caption(
+        "Kaydedilmiş dalga formları gerçek zamanlı akış simülasyonu olarak oynatılır. "
+        "GPD+SVM tetikleyici olay tespit ettiğinde PhaseNet kaskad faz belirleyici devreye girer."
+    )
+
+    import h5py as _h5_live
+    from seismic_engine.streaming import ReplaySource, RingBuffer
+    from seismic_engine.inference.cascaded_detector import CascadedDetector
+
+    if "live_monitor_state" not in st.session_state:
+        st.session_state["live_monitor_state"] = {
+            "running": False,
+            "events_detected": [],
+            "total_chunks": 0,
+        }
+
+    _live_col_ctrl, _live_col_main = st.columns([1, 3])
+
+    with _live_col_ctrl:
+        st.markdown('<span class="sidebar-label">KAYNAK SEÇİMİ</span>', unsafe_allow_html=True)
+
+        _live_meta = pd.read_csv(ROOT / "data" / "augmented_dataset" / "metadata.csv")
+        _live_events = _live_meta[
+            (_live_meta["window_type"] == "event") &
+            (_live_meta["augmentation"] == "original")
+        ].sort_values("source_magnitude", ascending=False)
+
+        _live_labels = [
+            f"M{row.source_magnitude:.1f} | {row.station} | {row.trace_name[:40]}"
+            for _, row in _live_events.head(30).iterrows()
+        ]
+        _live_sel_idx = st.selectbox(
+            "Demo trace seçin",
+            range(len(_live_labels)),
+            format_func=lambda i: _live_labels[i],
+            key="live_trace_sel",
+        )
+        _live_sel_row = _live_events.iloc[_live_sel_idx]
+
+        st.markdown("---")
+        _live_speed = st.select_slider(
+            "Oynatma hızı",
+            options=["1x (Gerçek)", "2x", "4x", "10x", "Anında"],
+            value="4x",
+            key="live_speed",
+        )
+        _speed_map = {"1x (Gerçek)": 1.0, "2x": 0.5, "4x": 0.25, "10x": 0.1, "Anında": 0.01}
+        _chunk_delay = _speed_map.get(_live_speed, 0.25)
+
+        _live_window_sec = st.slider(
+            "Görüntü penceresi (s)", 10, 60, 30, step=5, key="live_window"
+        )
+
+        st.markdown("---")
+        _live_start = st.button("▶️  Akışı Başlat", type="primary", use_container_width=True, key="live_start_btn")
+        _live_stop = st.button("⏹  Durdur", use_container_width=True, key="live_stop_btn")
+
+        st.markdown("---")
         st.markdown(
-            '<div style="border:1px solid #555;border-radius:6px;padding:10px;'
-            'margin-top:12px;font-size:0.75rem;color:#aaa">'
-            '⚠️ <b>Hipotetik Senaryo Simülasyonu</b><br>'
-            'Bu araç istatistiksel etki tahmini üretir. Kesin tahmin değildir. '
-            'FEMA HAZUS metodolojisi temel alınmıştır. 1999 Kocaeli (M7.6) ve '
-            '2023 Kahramanmaraş (M7.8) verileriyle kalibre edilmiştir.'
-            '</div>',
+            f'<div class="metric-card">'
+            f'<b style="color:#00d4ff">İstasyon:</b> {_live_sel_row["station"]}<br>'
+            f'<b style="color:#00d4ff">Magnitüd:</b> M{_live_sel_row.get("source_magnitude", 0):.1f}<br>'
+            f'<b style="color:#00d4ff">Süre:</b> 60.0s<br>'
+            f'<b style="color:#00d4ff">Mod:</b> Replay Buffer'
+            f'</div>',
             unsafe_allow_html=True,
         )
 
-    with _col_res:
-        if _run_btn or st.session_state.get("impact_result"):
-            if _run_btn:
-                with st.spinner("Senaryo hesaplanıyor..."):
-                    _res = _ic.run_scenario(_sc_lat, _sc_lon, _sc_mag, _sc_dep, _sc_time)
-                st.session_state["impact_result"] = _res
-            else:
-                _res = st.session_state["impact_result"]
+    with _live_col_main:
+        if _live_stop:
+            st.session_state["live_monitor_state"]["running"] = False
+            st.info("Akış durduruldu.")
 
-            if "error" in _res:
-                st.error(f"Hesaplama hatası: {_res['error']}")
-            else:
-                _tot  = _res["totals"]
-                _cas  = _tot["casualties"]
-                _dmg  = _tot["buildings"]
-                _eco  = _tot["economic"]
-                _top  = _res["top_affected"]
-                _prov = _res["province_results"]
-                _sc   = _res["scenario"]
+        if _live_start:
+            st.session_state["live_monitor_state"]["running"] = True
+            st.session_state["live_monitor_state"]["events_detected"] = []
 
-                # ── Section 1: Animated ShakeMap ─────────────────────────────
-                st.markdown("#### 🗺️ ShakeMap — MMI Dağılımı")
+            _hdf5_path = ROOT / "data" / "augmented_dataset" / "waveforms.hdf5"
+            with _h5_live.File(str(_hdf5_path), "r") as _hf_live:
+                _live_data = _hf_live["data"][_live_sel_row["trace_name"]][:]
 
-                # Build animated concentric rings + province scatter
-                _prov_df = pd.DataFrame(_prov)
+            _replay = ReplaySource(
+                data=_live_data,
+                sample_rate=100.0,
+                chunk_samples=100,
+                station=_live_sel_row["station"],
+            )
+            _ring = RingBuffer(capacity_samples=6000, n_channels=3)
 
-                # Color per MMI bucket
-                def _mmi_color(mmi):
-                    if mmi < 3:   return "#e0e0e0"
-                    if mmi < 5:   return "#a8e6cf"
-                    if mmi < 6:   return "#ffd700"
-                    if mmi < 7:   return "#ff9800"
-                    if mmi < 8:   return "#ef5350"
-                    if mmi < 9:   return "#b71c1c"
-                    return "#4a0000"
+            _status_container = st.empty()
+            _chart_container = st.empty()
+            _detection_container = st.empty()
+            _picks_container = st.empty()
+            _report_container = st.empty()
 
-                _prov_df["color"] = _prov_df["mmi"].apply(_mmi_color)
-                _prov_df["label"] = (
-                    _prov_df["province"] + "<br>MMI: " + _prov_df["mmi"].round(1).astype(str)
-                    + "<br>PGA: " + (_prov_df["pga_g"] * 100).round(1).astype(str) + "% g"
-                    + "<br>Mesafe: " + _prov_df["r_jb_km"].round(0).astype(str) + " km"
-                )
+            _status_container.markdown(
+                '<div style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);'
+                'border-radius:8px;padding:10px 16px;margin-bottom:10px">'
+                '<span style="color:#00d4ff;font-weight:600">📡 CANLI AKIŞ AKTİF</span>'
+                f' &nbsp;|&nbsp; İstasyon: <b>{_replay.station}</b>'
+                f' &nbsp;|&nbsp; Hız: {_live_speed}'
+                '</div>',
+                unsafe_allow_html=True,
+            )
 
-                # Static ShakeMap figure (Plotly mapbox)
-                _sm_fig = go.Figure()
+            _trigger_threshold_sec = 4.0
+            _trigger_window = int(_trigger_threshold_sec * 100)
+            _detection_fired = False
+            _cascade_result = None
 
-                # Province centroids colored by MMI
-                _sm_fig.add_trace(go.Scattermapbox(
-                    lat=_prov_df["lat"].tolist(),
-                    lon=_prov_df["lon"].tolist(),
-                    mode="markers+text",
-                    marker=dict(
-                        size=(_prov_df["mmi"].clip(4, 10) - 3) * 4,
-                        color=_prov_df["color"].tolist(),
-                        opacity=0.80,
+            for _chunk in _replay.stream_chunks(real_time=False):
+                if not st.session_state["live_monitor_state"]["running"]:
+                    break
+
+                _ring.append(_chunk)
+                st.session_state["live_monitor_state"]["total_chunks"] += 1
+
+                _visible_samples = int(_live_window_sec * 100)
+                _visible = _ring.get_latest(_visible_samples)
+                _t_axis = np.arange(_visible.shape[1]) / 100.0
+
+                _fig_live = go.Figure()
+                _ch_names = ["HHZ", "HHN", "HHE"]
+                _ch_colors = ["#00d4ff", "#7b8cde", "rgba(255,107,53,0.8)"]
+                for _ci in range(3):
+                    _ch_data = _visible[_ci]
+                    _norm_ch = _ch_data / (np.abs(_ch_data).max() + 1e-9)
+                    _fig_live.add_trace(go.Scatter(
+                        x=_t_axis,
+                        y=_norm_ch + (2 - _ci) * 2.5,
+                        name=_ch_names[_ci],
+                        line=dict(width=0.8, color=_ch_colors[_ci]),
+                        hoverinfo="skip",
+                    ))
+
+                _elapsed = _replay.elapsed_seconds
+                _progress_pct = _replay.progress * 100
+
+                if _detection_fired and _cascade_result is not None:
+                    _p_sec = _cascade_result.get("phasenet_p_seconds")
+                    _s_sec = _cascade_result.get("phasenet_s_seconds")
+                    if _p_sec is not None:
+                        _fig_live.add_vline(
+                            x=_p_sec, line_width=2.5, line_dash="solid",
+                            line_color="#00ff88",
+                            annotation_text=f"P {_p_sec:.2f}s",
+                            annotation_position="top left",
+                            annotation_font=dict(size=11, color="#00ff88"),
+                        )
+                    if _s_sec is not None:
+                        _fig_live.add_vline(
+                            x=_s_sec, line_width=2.5, line_dash="dash",
+                            line_color="#ff6b35",
+                            annotation_text=f"S {_s_sec:.2f}s",
+                            annotation_position="top right",
+                            annotation_font=dict(size=11, color="#ff6b35"),
+                        )
+
+                _fig_live.update_layout(
+                    height=350,
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    plot_bgcolor="rgba(10,14,26,0.95)",
+                    margin=dict(l=40, r=20, t=35, b=35),
+                    xaxis=dict(
+                        title=f"Zaman (s) — Geçen: {_elapsed:.1f}s ({_progress_pct:.0f}%)",
+                        gridcolor="rgba(0,212,255,0.06)",
+                        zeroline=False,
+                        tickfont=dict(color="rgba(232,236,240,0.5)", family="Space Mono", size=9),
+                        titlefont=dict(color="rgba(232,236,240,0.6)", size=10),
                     ),
-                    text=_prov_df["province"].tolist(),
-                    textposition="top center",
-                    hovertext=_prov_df["label"].tolist(),
-                    hoverinfo="text",
-                    name="İller (MMI)",
-                ))
-
-                # Epicenter marker
-                _sm_fig.add_trace(go.Scattermapbox(
-                    lat=[_sc["lat"]], lon=[_sc["lon"]],
-                    mode="markers+text",
-                    marker=dict(size=22, color="#ff0000", symbol="star"),
-                    text=[f"M{_sc['magnitude']}"],
-                    textposition="top right",
-                    hovertext=[f"Merkez Üssü<br>M{_sc['magnitude']}, {_sc['depth_km']}km"],
-                    hoverinfo="text",
-                    name="Merkez Üssü",
-                ))
-
-                _sm_fig.update_layout(
-                    mapbox_style="carto-darkmatter",
-                    mapbox=dict(center=dict(lat=_sc["lat"], lon=_sc["lon"]), zoom=5),
-                    height=380, margin=dict(l=0, r=0, t=0, b=0),
-                    legend=dict(orientation="h", y=-0.05),
-                    paper_bgcolor="#0e1117",
+                    yaxis=dict(
+                        showticklabels=False,
+                        gridcolor="rgba(0,212,255,0.04)",
+                        zeroline=False,
+                    ),
+                    legend=dict(
+                        orientation="h", y=1.08,
+                        bgcolor="rgba(15,21,37,0.7)",
+                        font=dict(color="#e8ecf0", size=9),
+                    ),
+                    showlegend=True,
                 )
-                st.plotly_chart(_sm_fig, use_container_width=True)
+                _chart_container.plotly_chart(_fig_live, use_container_width=True, key=f"live_chart_{_replay._position}")
 
-                # MMI legend
-                _mmi_cols = st.columns(7)
-                for _ci, (_label, _clr) in enumerate([
-                    ("MMI 1-2", "#e0e0e0"), ("MMI 3-4", "#a8e6cf"),
-                    ("MMI 5", "#ffd700"), ("MMI 6", "#ff9800"),
-                    ("MMI 7", "#ef5350"), ("MMI 8", "#b71c1c"), ("MMI 9+", "#4a0000"),
-                ]):
-                    with _mmi_cols[_ci]:
-                        st.markdown(
-                            f'<div style="background:{_clr};color:{"#000" if _ci<3 else "#fff"};'
-                            f'text-align:center;border-radius:4px;padding:2px 4px;'
-                            f'font-size:0.65rem">{_label}</div>',
+                if (
+                    not _detection_fired
+                    and _ring.is_full
+                    and _ring.total_samples_received >= _trigger_window
+                ):
+                    _full_window = _ring.get_window(6000)
+
+                    @st.cache_resource
+                    def _load_cascade():
+                        _cd = CascadedDetector(device="cpu")
+                        _cd.load(ROOT / "models")
+                        return _cd
+
+                    _cascade = _load_cascade()
+                    _cascade_result = _cascade.predict(
+                        _full_window, station=_live_sel_row["station"]
+                    )
+
+                    if _cascade_result["is_event"]:
+                        _detection_fired = True
+                        _ev_prob = _cascade_result["trace_event_prob"]
+                        _p_sec_det = _cascade_result.get("phasenet_p_seconds")
+                        _s_sec_det = _cascade_result.get("phasenet_s_seconds")
+                        _p_conf = _cascade_result.get("phasenet_p_confidence", 0)
+                        _s_conf = _cascade_result.get("phasenet_s_confidence", 0)
+
+                        _detection_container.markdown(
+                            '<div style="background:rgba(0,200,83,0.12);'
+                            'border:2px solid #00c853;border-radius:10px;'
+                            'padding:14px 18px;margin:10px 0">'
+                            '<span style="font-size:1.2rem;font-weight:700;color:#00c853">'
+                            '🚨 OLAY TESPİT EDİLDİ — Kaskad Tetiklendi</span><br>'
+                            f'<span style="color:rgba(232,236,240,0.8);font-size:0.9rem">'
+                            f'SVM Olasılık: {_ev_prob:.3f} &nbsp;|&nbsp; '
+                            f'PhaseNet P: {_p_sec_det:.2f}s (güven: {_p_conf:.2f}) &nbsp;|&nbsp; '
+                            f'PhaseNet S: {_s_sec_det:.2f}s (güven: {_s_conf:.2f})'
+                            f'</span></div>',
+                            unsafe_allow_html=True,
+                        ) if _p_sec_det and _s_sec_det else _detection_container.markdown(
+                            '<div style="background:rgba(0,200,83,0.12);'
+                            'border:2px solid #00c853;border-radius:10px;'
+                            'padding:14px 18px;margin:10px 0">'
+                            '<span style="font-size:1.2rem;font-weight:700;color:#00c853">'
+                            '🚨 OLAY TESPİT EDİLDİ</span><br>'
+                            f'<span style="color:rgba(232,236,240,0.8);font-size:0.9rem">'
+                            f'SVM Olasılık: {_ev_prob:.3f} &nbsp;|&nbsp; '
+                            f'PhaseNet faz belirleme bekleniyor...'
+                            f'</span></div>',
                             unsafe_allow_html=True,
                         )
 
-                # ── Section 2: Four metric cards ─────────────────────────────
-                st.markdown("#### 📊 Tahmini Etki Özeti")
-                _mc1, _mc2, _mc3, _mc4 = st.columns(4)
-                with _mc1:
-                    st.metric(
-                        "🏚 Hasar Gören Bina",
-                        f"~{(_dmg['slight']+_dmg['moderate']+_dmg['extensive']):,.0f}",
-                        help="Hafif + orta + ağır hasar"
-                    )
-                    st.caption(f"Ağır: {_dmg['extensive']:,}")
-                with _mc2:
-                    st.metric(
-                        "🏗 Yıkılan / Çöken Bina",
-                        f"~{_dmg['complete']:,.0f}",
-                        help="Tam yıkım (complete collapse)"
-                    )
-                    st.caption(f"Kullanılamaz: {_dmg['total_unusable']:,}")
-                with _mc3:
-                    st.metric(
-                        "💔 Can Kaybı Tahmini",
-                        f"{_cas['fatality_low']:,} – {_cas['fatality_high']:,}",
-                        help="Alt/üst tahmin (±40% belirsizlik)"
-                    )
-                    st.caption(f"Orta: {_cas['fatality_mid']:,}")
-                with _mc4:
-                    st.metric(
-                        "💰 Ekonomik Kayıp",
-                        f"~{_eco['total_loss_tl']/1e9:.0f} Mrd TL",
-                        help="Dolaylı kayıplar dahil (1.5× çarpanı)"
-                    )
-                    st.caption(f"GSYİH'nın %{_eco['loss_pct_gdp']:.1f}")
+                        _pc1, _pc2, _pc3, _pc4 = _picks_container.columns(4)
+                        with _pc1:
+                            st.metric("SVM Olasılık", f"{_ev_prob:.3f}")
+                        with _pc2:
+                            st.metric("P-Varış (PhaseNet)", f"{_p_sec_det:.2f}s" if _p_sec_det else "—")
+                        with _pc3:
+                            st.metric("S-Varış (PhaseNet)", f"{_s_sec_det:.2f}s" if _s_sec_det else "—")
+                        with _pc4:
+                            _sp_diff = (_s_sec_det - _p_sec_det) if (_s_sec_det and _p_sec_det) else None
+                            st.metric("S-P Farkı", f"{_sp_diff:.2f}s" if _sp_diff else "—")
 
-                # Displaced + injured
-                _mi1, _mi2 = st.columns(2)
-                with _mi1:
-                    st.metric("🏕 Yerinden Edilmiş", f"~{_cas['displaced']:,}")
-                with _mi2:
-                    st.metric("🏥 Yaralı Tahmini",
-                              f"{_cas['injured_low']:,} – {_cas['injured_high']:,}")
+                        st.session_state["live_monitor_state"]["events_detected"].append({
+                            "station": _live_sel_row["station"],
+                            "magnitude": float(_live_sel_row.get("source_magnitude", 0)),
+                            "event_prob": _ev_prob,
+                            "p_seconds": _p_sec_det,
+                            "s_seconds": _s_sec_det,
+                            "elapsed": _elapsed,
+                        })
 
-                # ── Section 3: Affected Provinces Table ───────────────────────
-                if _top:
-                    st.markdown("#### 🔴 En Fazla Etkilenen İller")
-                    _top_df = pd.DataFrame([{
-                        "İl":            p["province"],
-                        "MMI":           round(p["mmi"], 1),
-                        "Nüfus":         f"{p['population']:,}",
-                        "Can Kaybı":     f"{p['casualties']['fatality_mid']:,}",
-                        "Yıkılan Bina":  f"{p['damage']['complete']:,}",
-                        "Mesafe (km)":   round(p["r_jb_km"], 0),
-                    } for p in _top])
-                    st.dataframe(
-                        _top_df,
-                        use_container_width=True,
-                        hide_index=True,
-                    )
+                        from risk_advisor.report_generator import ReportGenerator
+                        from risk_advisor.schema import EnginePayload, DetectedEvent
+                        from datetime import datetime as _dt_live
 
-                # ── Section 4: Damage breakdown bar chart ─────────────────────
-                _top8 = sorted(_prov, key=lambda x: x["mmi"], reverse=True)[:8]
-                if any(p["damage"]["slight"] > 0 for p in _top8):
-                    st.markdown("#### 📉 Hasar Dağılımı (En Çok Etkilenen 8 İl)")
-                    _bar_fig = go.Figure()
-                    _ds_config = [
-                        ("complete",  "Çöken",  "#7b0000"),
-                        ("extensive", "Ağır",   "#ef5350"),
-                        ("moderate",  "Orta",   "#ff9800"),
-                        ("slight",    "Hafif",  "#ffd700"),
-                    ]
-                    _pnames = [p["province"] for p in _top8]
-                    for _ds_key, _ds_label, _ds_clr in _ds_config:
-                        _vals = [p["damage"].get(_ds_key, 0) for p in _top8]
-                        _bar_fig.add_trace(go.Bar(
-                            name=_ds_label, x=_pnames, y=_vals,
-                            marker_color=_ds_clr,
-                        ))
-                    _bar_fig.update_layout(
-                        barmode="stack", height=280,
-                        paper_bgcolor="#0e1117", plot_bgcolor="#0e1117",
-                        font=dict(color="#e8ecf0"),
-                        margin=dict(l=0, r=0, t=10, b=40),
-                        legend=dict(orientation="h", y=1.12),
-                        xaxis=dict(tickfont=dict(size=10)),
-                        yaxis=dict(title="Bina Sayısı"),
-                    )
-                    st.plotly_chart(_bar_fig, use_container_width=True)
+                        _rgen_live = ReportGenerator()
+                        _rgen_live.initialize()
 
-                # ── Section 5: TBDY-2018 implication ─────────────────────────
-                st.markdown("#### 🏛 TBDY-2018 Bağlamı")
-                _dts1_provs = [
-                    p["province"] for p in _prov
-                    if p["mmi"] >= 7.0
-                ]
-                if _dts1_provs:
-                    st.info(
-                        f"Bu senaryo şu illerde **DTS-1** tasarım kriterlerini "
-                        f"zorunlu kılacak düzeyde sarsıntı üretmektedir:\n\n"
-                        + ", ".join(_dts1_provs[:10])
-                    )
-                else:
-                    st.info("Bu senaryo DTS-1 eşiğini (MMI≥7) aşan il bulunmamaktadır.")
+                        _det_ev = DetectedEvent(
+                            trace_id=_live_sel_row["trace_name"],
+                            magnitude=float(_live_sel_row.get("source_magnitude", 0)),
+                            model_name="cascade_gpd_phasenet",
+                            p_probability_peak=_ev_prob,
+                            p_pick_sample=_cascade_result.get("phasenet_p_sample"),
+                            p_pick_seconds=_p_sec_det,
+                        )
+                        _payload_live = EnginePayload(
+                            timestamp=_dt_live.utcnow(),
+                            pipeline_version="2.0.0-cascade",
+                            region="marmara",
+                            detected_events=[_det_ev],
+                        )
 
-                # Non-compliant building estimate (pre-1980 masonry in MMI≥6 zones)
-                _noncompliant = sum(
-                    p["damage"]["complete"] + p["damage"]["extensive"]
-                    for p in _prov if p["mmi"] >= 6.0
-                )
-                _total_in_zone = sum(
-                    p["total_buildings"] for p in _prov if p["mmi"] >= 6.0
-                )
-                if _total_in_zone > 0:
-                    _nc_pct = 100 * _noncompliant / _total_in_zone
-                    st.caption(
-                        f"MMI≥6 bölgesindeki binaların tahminen **%{_nc_pct:.1f}'i** "
-                        "ağır hasar veya yıkım riski taşımaktadır."
-                    )
+                        _report_container.markdown("---")
+                        _report_container.markdown("### 📋 Otomatik Risk Raporu (Tetiklendi)")
+                        _report_text_live = ""
+                        _report_display = _report_container.empty()
+                        for _rchunk in _rgen_live.stream_report(_payload_live, language="tr"):
+                            _report_text_live += _rchunk
+                            _report_display.markdown(_report_text_live)
 
-                # ── Section 6: Historical comparison ─────────────────────────
-                st.markdown("#### 📚 Tarihsel Karşılaştırma")
-                _hist = [
-                    {
-                        "Senaryo": f"Bu Senaryo (M{_sc['magnitude']})",
-                        "Can Kaybı": f"{_cas['fatality_low']:,}–{_cas['fatality_high']:,}",
-                        "Yıkılan Bina": f"~{_dmg['complete']:,}",
-                        "Ekono. Kayıp": f"~{_eco['total_loss_tl']/1e9:.0f} Mrd TL",
-                        "Not": "Model tahmini",
-                    },
-                    {
-                        "Senaryo": "1999 Kocaeli M7.6 (gerçek)",
-                        "Can Kaybı": "17,480",
-                        "Yıkılan Bina": "18,373",
-                        "Ekono. Kayıp": "~650 Mrd TL",
-                        "Not": "AFAD resmi",
-                    },
-                    {
-                        "Senaryo": "2023 Kahramanmaraş M7.8 (gerçek)",
-                        "Can Kaybı": "53,537",
-                        "Yıkılan Bina": "107,000+",
-                        "Ekono. Kayıp": "~3,100 Mrd TL",
-                        "Not": "AFAD resmi",
-                    },
-                ]
-                st.dataframe(
-                    pd.DataFrame(_hist),
-                    use_container_width=True,
-                    hide_index=True,
+                        break
+
+                import time as _time_mod
+                _time_mod.sleep(_chunk_delay)
+
+            if not _detection_fired:
+                _detection_container.info(
+                    "Akış tamamlandı — bu pencerede olay tespit edilmedi. "
+                    "Farklı bir trace seçerek tekrar deneyin."
                 )
 
-                # Limitation note for Marmara scenario
-                if abs(_sc["lon"] - 28.5) < 1.0 and abs(_sc["lat"] - 40.8) < 1.0:
-                    st.info(
-                        "ℹ️ **Marmara Senaryosu Not:** İl merkezi tabanlı model, "
-                        "İstanbul'un Marmara Fayı'na yakın ilçelerinin maruziyetini "
-                        "tam yansıtamamaktadır. Mühendislik çalışmaları (İMO 2019) bu senaryo "
-                        "için İstanbul'da **30,000–50,000 can kaybı** öngörmektedir. "
-                        "Bu araçtaki düşük değer il bazlı ortalama sınırlamasından kaynaklanır."
-                    )
+            st.session_state["live_monitor_state"]["running"] = False
 
-                st.caption(
-                    "Kaynak: FEMA HAZUS-MH MR5 (2012), BA08 GMPE, "
-                    "Worden et al. 2012 MMI dönüşümü. "
-                    "Kalibrasyon: 1999 Kocaeli (oran: 1.01×), 2020 İzmir (oran: 0.75×). "
-                    "**Hipotetik Senaryo Simülasyonu — Kesin tahmin değildir.**"
-                )
-
-        else:
-            st.info("👈 Sol panelden bir hazır senaryo seçin veya parametreleri "
-                    "girerek **🔴 Senaryoyu Simüle Et** butonuna tıklayın.")
+        elif not st.session_state["live_monitor_state"].get("running"):
+            st.markdown(
+                '<div style="text-align:center;padding:80px 20px;'
+                'border:1px dashed rgba(0,212,255,0.2);border-radius:12px;margin:20px 0">'
+                '<p style="font-size:3rem;margin-bottom:10px">📡</p>'
+                '<p style="color:rgba(232,236,240,0.6);font-size:1rem">'
+                'Canlı izleme demo modu</p>'
+                '<p style="color:rgba(232,236,240,0.4);font-size:0.8rem">'
+                'Sol panelden bir trace seçin ve <b>▶️ Akışı Başlat</b> butonuna tıklayın.<br>'
+                'Kaydedilmiş dalga formu gerçek zamanlı olarak yeniden oynatılacaktır.<br>'
+                'GPD+SVM tetikleyici olay tespit ettiğinde PhaseNet kaskadı devreye girer.</p>'
+                '</div>',
+                unsafe_allow_html=True,
+            )
