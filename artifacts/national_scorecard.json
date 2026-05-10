@@ -1,0 +1,122 @@
+{
+  "gpd_national": {
+    "model": "gpd_national",
+    "overall": {
+      "n_events": 102,
+      "n_noise": 1819,
+      "TP": 77,
+      "FN": 25,
+      "FP": 237,
+      "TN": 1582,
+      "recall": 0.7549,
+      "precision": 0.2452,
+      "tnr": 0.8697,
+      "f1": 0.3702
+    },
+    "per_station": {
+      "KO.ANTB": {
+        "n_events": 0,
+        "n_noise": 600,
+        "tnr": 0.99
+      },
+      "KO.DARE": {
+        "n_events": 0,
+        "n_noise": 503,
+        "tnr": 0.8767
+      },
+      "KO.KMRS": {
+        "n_events": 102,
+        "n_noise": 716,
+        "recall": 0.7549,
+        "tnr": 0.764
+      }
+    },
+    "per_magnitude": {
+      "M0.5-1.5": {
+        "n": 29,
+        "detected": 18,
+        "recall": 0.6207
+      },
+      "M1.5-2": {
+        "n": 27,
+        "detected": 21,
+        "recall": 0.7778
+      },
+      "M2-3": {
+        "n": 28,
+        "detected": 22,
+        "recall": 0.7857
+      },
+      "M3-4": {
+        "n": 8,
+        "detected": 7,
+        "recall": 0.875
+      },
+      "M4+": {
+        "n": 10,
+        "detected": 9,
+        "recall": 0.9
+      }
+    }
+  },
+  "eqt_national": {
+    "model": "eqt_national",
+    "overall": {
+      "n_events": 102,
+      "n_noise": 1819,
+      "TP": 86,
+      "FN": 16,
+      "FP": 424,
+      "TN": 1395,
+      "recall": 0.8431,
+      "precision": 0.1686,
+      "tnr": 0.7669,
+      "f1": 0.281
+    },
+    "per_station": {
+      "KO.ANTB": {
+        "n_events": 0,
+        "n_noise": 600,
+        "tnr": 0.985
+      },
+      "KO.DARE": {
+        "n_events": 0,
+        "n_noise": 503,
+        "tnr": 0.7356
+      },
+      "KO.KMRS": {
+        "n_events": 102,
+        "n_noise": 716,
+        "recall": 0.8431,
+        "tnr": 0.6061
+      }
+    },
+    "per_magnitude": {
+      "M0.5-1.5": {
+        "n": 29,
+        "detected": 21,
+        "recall": 0.7241
+      },
+      "M1.5-2": {
+        "n": 27,
+        "detected": 22,
+        "recall": 0.8148
+      },
+      "M2-3": {
+        "n": 28,
+        "detected": 25,
+        "recall": 0.8929
+      },
+      "M3-4": {
+        "n": 8,
+        "detected": 8,
+        "recall": 1.0
+      },
+      "M4+": {
+        "n": 10,
+        "detected": 10,
+        "recall": 1.0
+      }
+    }
+  }
+}
